@@ -4,7 +4,12 @@
   "description": "In order to get ready to write productive code, complete the following steps during Sprint 0:",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "jest --runInBand --detectOpenHandles --coverage"
+=======
+    "lint": "eslint . --ext .js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> a81e4cee2374ba243a024c6d6751a463be2c32ba
   },
   "repository": {
     "type": "git",
