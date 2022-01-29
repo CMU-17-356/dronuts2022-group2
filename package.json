@@ -1,0 +1,19 @@
+{
+  "name": "dronuts",
+  "version": "1.0.0",
+  "description": "In order to get ready to write productive code, complete the following steps during Sprint 0:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMU-17-356/dronuts2022-group2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMU-17-356/dronuts2022-group2/issues"
+  },
+  "homepage": "https://github.com/CMU-17-356/dronuts2022-group2#readme"
+}
