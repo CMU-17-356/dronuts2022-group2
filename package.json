@@ -4,7 +4,7 @@
   "description": "In order to get ready to write productive code, complete the following steps during Sprint 0:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand --detectOpenHandles --coverage"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
     "eslint-plugin-react": "^7.28.0"
   },
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "jest": "^27.4.7",
+    "supertest": "^6.2.2"
   }
 }
