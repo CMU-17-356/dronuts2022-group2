@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "8"
+dist: xenial  
+sudo: required
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_TLS_VERIFY="1"
+    - DOCKER_HOST="tcp://<AZURE_VM_IP>:2376"
+    - DOCKER_CERT_PATH="$TRAVIS_BUILD_DIR/azure"
+    - DOCKER_MACHINE_NAME="<REPOSITORY_NAME>"
+
+script:
+  - npm test
+  - docker-compose build
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: docker-compose up -d --remove-orphans
+  on:
+    branch: master
