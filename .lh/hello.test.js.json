@@ -1,0 +1,18 @@
+{
+    "sourceFile": "hello.test.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1643484136703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1643484136703,
+            "name": "Commit-0",
+            "content": "const request = require(\"supertest\");\nconst app = require('./hello');\n\ndescribe(\"Testing hello world works\", () => {\n    test(\"hello world gives status 200\", async () => {\n      await request(app).get(\"/\").expect(200);\n    })\n})\n\n"
+        }
+    ]
+}
