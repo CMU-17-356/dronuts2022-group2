@@ -1,4 +1,4 @@
 module.exports = {
   // ... other settings,
-  testRunner: 'jest-jasmine2' 
+  testRunner: 'jest-jasmine2',
 };
