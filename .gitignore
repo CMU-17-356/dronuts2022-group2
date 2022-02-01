@@ -2,3 +2,4 @@ node_modules/
 .lh
 coverage
 .vscode
+yarn-error.log
