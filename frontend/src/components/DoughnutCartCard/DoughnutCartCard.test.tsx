@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DoughnutCard from './DoughnutCard';
+import DoughnutCartCard from './DoughnutCartCard';
 
 it('It should mount', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<DoughnutCard />, div);
+  ReactDOM.render(<DoughnutCartCard />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
