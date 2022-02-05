@@ -1,8 +1,9 @@
-import express from 'express';
-const app = express();
+//import express from 'express';
+const express = require('express')
+const my_app = express();
 
-app.get('/', (req, res) => {
+my_app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-module.exports = app;
+module.exports = my_app;
