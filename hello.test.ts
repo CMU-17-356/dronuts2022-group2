@@ -6,4 +6,3 @@ describe("Testing hello world works", () => {
       await request(app).get("/").expect(200);
     })
 })
-
