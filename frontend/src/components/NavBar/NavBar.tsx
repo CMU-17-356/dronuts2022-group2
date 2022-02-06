@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import OrderMenu from '../OrderMenu/OrderMenu';
 import './NavBar.css';
 
 interface NavBarProps {}
