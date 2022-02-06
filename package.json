@@ -4,11 +4,9 @@
   "description": "In order to get ready to write productive code, complete the following steps during Sprint 0:",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node app.ts",
     "lint": "eslint . --ext .js",
-    "test": "jest --runInBand --detectOpenHandles --coverage",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "test": "jest --runInBand --detectOpenHandles --coverage"
   },
   "repository": {
     "type": "git",
@@ -48,9 +46,9 @@
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.11.22",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "@types/supertest": "^2.0.11",
     "express": "^4.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

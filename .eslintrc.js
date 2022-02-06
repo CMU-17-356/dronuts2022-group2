@@ -19,7 +19,13 @@ module.exports = {
     'react',
     '@typescript-eslint',
   ],
+  'settings': {
+    'react': {
+      'version': '17.0.2',
+    },
+  },
   'rules': {
     'linebreak-style': 0,
+    'object-curly-spacing': ['error', 'always'],
   },
 };

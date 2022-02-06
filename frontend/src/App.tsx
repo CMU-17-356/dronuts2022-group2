@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import { Router } from 'express';
 import OrderMenu from './components/OrderMenu/OrderMenu';
 
+/**
+ * Main function to run the app
+ * @return {React.FC}
+ */
 function App() {
   return (
     <div className="App">
