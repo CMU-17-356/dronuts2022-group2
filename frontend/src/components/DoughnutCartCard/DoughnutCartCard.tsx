@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './DoughnutCartCard.css';
 import { Card, Button, InputGroup, FormControl, Form } from 'react-bootstrap';
-import donut from './chocolate-glaze.jpg';
+import donut from '../../assets/chocolate_glaze.jpg';
 
 interface DoughnutCartCardProps {}
 
