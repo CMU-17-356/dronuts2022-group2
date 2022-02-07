@@ -6,7 +6,6 @@ interface CartProps {}
 
 const Cart: FC<CartProps> = () => (
   <div className="Cart">
-    Cart Component
     <DoughnutCartCard></DoughnutCartCard>
   </div>
 );

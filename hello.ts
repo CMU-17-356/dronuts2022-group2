@@ -5,5 +5,5 @@ app.get('/', (req:express.Request, res:express.Response) => {
   res.send('Hello World!');
 });
 
-export default app
+export default app;
 module.exports = app;

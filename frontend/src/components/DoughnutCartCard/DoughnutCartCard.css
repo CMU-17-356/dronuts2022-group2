@@ -1,1 +1,24 @@
-.DoughnutCartCard {}
+.DoughnutCartCard {
+    background-color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: row;
+}
+
+p {
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+}
+
+.row {
+    display: flex;
+    justify-content: row;
+}
+
+form {
+    padding: 1em;
+}

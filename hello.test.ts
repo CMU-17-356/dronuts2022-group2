@@ -7,4 +7,4 @@ describe('Testing hello world works', () => {
   });
 });
 
-export { }
+export { };
