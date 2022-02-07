@@ -1,1 +1,9 @@
-.DeliveryInfo {}
+.DeliveryInfo {
+    background-color: white;
+    padding: 1em;
+}
+
+.form-label {
+    color: black;
+    float: left;
+}

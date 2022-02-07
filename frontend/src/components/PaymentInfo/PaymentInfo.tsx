@@ -5,7 +5,7 @@ interface PaymentInfoProps {}
 
 const PaymentInfo: FC<PaymentInfoProps> = () => (
   <div className="PaymentInfo">
-    PaymentInfo Component
+    Payment Information
   </div>
 );
 

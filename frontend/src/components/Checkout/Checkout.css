@@ -1,1 +1,18 @@
-.Checkout {}
+.Checkout {
+    padding: 1em;
+    width: 80%;
+}
+
+.flex-container {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+.Cart{
+    width: 60%;
+}
+
+.sidebar {
+    width: 30%;
+}

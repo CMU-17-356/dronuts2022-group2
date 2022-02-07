@@ -1,1 +1,8 @@
-.DoughnutCartCard {}
+.DoughnutCartCard {
+    background-color: white;
+    padding: 1em;
+}
+
+p {
+    color: black;
+}
