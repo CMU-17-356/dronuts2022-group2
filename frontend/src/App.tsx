@@ -20,9 +20,9 @@ function App() {
         <NavBar/>
         <BrowserRouter>
           <Routes>
-            <Route element={<Checkout/>} path="/"/>
+            <Route element={<OrderMenu/>} path="/"/>
             <Route element={<Checkout/>} path="/checkout" />
-            <Route element={<Checkout/>} path="menu"/>
+            <Route element={<OrderMenu/>} path="menu"/>
           </Routes>
           </BrowserRouter>
       </header>
