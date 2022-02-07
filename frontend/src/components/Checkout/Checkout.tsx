@@ -8,12 +8,15 @@ interface CheckoutProps {}
 
 const Checkout: FC<CheckoutProps> = () => (
   <div className="Checkout">
-    Checkout Component
     <div className = 'flex-container'>
         <Cart></Cart>
         <div className = 'sidebar'>
-            <DeliveryInfo></DeliveryInfo>
-            <PaymentInfo></PaymentInfo>
+            <div className = 'infoForm'>
+                <DeliveryInfo></DeliveryInfo>
+            </div>
+            <div className = 'infoForm'>
+                <PaymentInfo></PaymentInfo>
+            </div>
         </div>
     </div>
   </div>
