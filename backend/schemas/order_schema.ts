@@ -10,7 +10,7 @@ const orderSchema = new Schema({
   // List of donuts in the order.
   donuts: { type: [donutSchema] },
   // Address that order will be delivered to.
-  destination: { type: String }
+  destination: { type: String },
 });
 
 const Order = mongoose.model('Order', orderSchema);

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node app.ts",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint . --ext .js,.ts",
     "test": "jest --runInBand --detectOpenHandles --coverage"
   },
   "repository": {

@@ -9,7 +9,7 @@ const userSchema = new Schema({
   full_name: { type: String },
   // Lists of previous donuts they've ordered.
   previous_orders: { type: [donutSchema] },
-  employee: { type: Boolean }
+  employee: { type: Boolean },
 });
 
 const User = mongoose.model('User', userSchema);
