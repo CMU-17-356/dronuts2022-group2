@@ -1,5 +1,4 @@
 import { droneSchema, Drone } from './drone_schema';
-import { Error } from 'mongoose';
 
 test("Drone ID required field", done => {
     var drone = new Drone();
