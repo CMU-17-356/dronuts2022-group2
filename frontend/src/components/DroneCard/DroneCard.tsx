@@ -13,13 +13,6 @@ const DroneCard: FC<DroneCardProps> = () => (
           Doughnut Order 1
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Order #2</Accordion.Header>
-        <Accordion.Body>
-          Doughnut Order 2
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
   </div>
 );
 

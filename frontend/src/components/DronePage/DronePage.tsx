@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Accordion } from 'react-bootstrap';
 import DroneCard from '../DroneCard/DroneCard';
 import './DronePage.css';
 
@@ -6,7 +7,12 @@ interface DronePageProps {}
 
 const DronePage: FC<DronePageProps> = () => (
   <div className="DronePage">
-    <DroneCard/>
+    <Accordion>
+      {
+        
+      <DroneCard/>
+      }
+    </Accordion>
   </div>
 );
 
