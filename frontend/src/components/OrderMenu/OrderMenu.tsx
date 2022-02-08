@@ -5,11 +5,14 @@ import './OrderMenu.css';
 interface OrderMenuProps {}
 
 const OrderMenu: FC<OrderMenuProps> = () => (
-  <div className="OrderMenu">
-    OrderMenu Component
-    A list of doughnut menu items
-    <DoughnutMenuCard></DoughnutMenuCard>
-  </div>
+    <div className="OrderMenu">
+        <div className="container">
+            <DoughnutMenuCard></DoughnutMenuCard>
+            <DoughnutMenuCard></DoughnutMenuCard>
+            <DoughnutMenuCard></DoughnutMenuCard>
+            <DoughnutMenuCard></DoughnutMenuCard>
+        </div>
+    </div>
 );
 
 export default OrderMenu;

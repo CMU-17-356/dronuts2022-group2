@@ -7,19 +7,19 @@ import './Checkout.css';
 interface CheckoutProps {}
 
 const Checkout: FC<CheckoutProps> = () => (
-  <div className="Checkout">
-    <div className='flex-container'>
-        <Cart></Cart>
-        <div className = 'sidebar'>
-            <div className = 'infoForm'>
-                <DeliveryInfo></DeliveryInfo>
-            </div>
-            <div className = 'infoForm'>
-                <PaymentInfo></PaymentInfo>
+    <div className="Checkout">
+        <div className='flex-container'>
+            <Cart></Cart>
+            <div className = 'sidebar'>
+                <div className = 'infoForm'>
+                    <DeliveryInfo></DeliveryInfo>
+                </div>
+                <div className = 'infoForm'>
+                    <PaymentInfo></PaymentInfo>
+                </div>
             </div>
         </div>
     </div>
-  </div>
 );
 
 export default Checkout;
