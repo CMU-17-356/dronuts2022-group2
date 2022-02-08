@@ -13,6 +13,8 @@ const NavBar: FC<NavBarProps> = () => (
         <Nav className="me-auto">
           <Nav.Link href="menu">Doughnut Menu</Nav.Link>
           <Nav.Link href="checkout">Checkout</Nav.Link>
+          <Nav.Link href="backlog">Backlog</Nav.Link>
+          <Nav.Link href="drones">Drones</Nav.Link>
           <Nav.Link href="login">Login</Nav.Link>
         </Nav>
       </Navbar.Collapse>
