@@ -1,4 +1,4 @@
-import { droneSchema, Drone } from './drone_schema';
+import { Drone } from './drone_schema';
 
 test('Drone ID required field', (done) => {
   const drone = new Drone();

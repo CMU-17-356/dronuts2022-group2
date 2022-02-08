@@ -1,4 +1,4 @@
-import { orderSchema, Order } from './order_schema';
+import { Order } from './order_schema';
 
 test('User required field', (done) => {
   const order = new Order();

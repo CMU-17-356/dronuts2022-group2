@@ -1,4 +1,4 @@
-import { userSchema, User } from './user_schema';
+import { User } from './user_schema';
 
 test('Username/passwords required field', (done) => {
   const drone = new User();

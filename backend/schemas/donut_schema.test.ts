@@ -1,4 +1,4 @@
-import { donutSchema, Donut } from './donut_schema';
+import { Donut } from './donut_schema';
 
 test('Donut name required field', (done) => {
   const donut = new Donut();
