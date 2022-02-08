@@ -1,1 +1,23 @@
-.PaymentInfo {}
+.PaymentInfo {
+    background-color: white;
+    padding: 1em;
+}
+
+.form-label {
+    color: black;
+    float: left;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+    padding: 0 16px;
+}

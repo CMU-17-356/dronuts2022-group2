@@ -4,6 +4,7 @@
   "description": "In order to get ready to write productive code, complete the following steps during Sprint 0:",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cd frontend && npm install",
     "start": "ts-node app.ts",
     "lint": "eslint . --ext .js,.ts",
     "test": "jest --runInBand --detectOpenHandles --coverage"
