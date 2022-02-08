@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './NavBar.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 interface NavBarProps { }
 
 const NavBar: FC<NavBarProps> = () => (
