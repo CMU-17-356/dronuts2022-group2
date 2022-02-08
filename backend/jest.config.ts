@@ -9,7 +9,6 @@ const config: Config.InitialOptions = {
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
   },
-  testEnvironment: 'jsdom',
-  projects: ['./backend', './frontend'],
+  testEnvironment: 'node',
 };
 export default config;

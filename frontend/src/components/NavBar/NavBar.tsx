@@ -1,19 +1,22 @@
 import React, { FC } from 'react';
 import './NavBar.css';
-import { Navbar, Container, Nav } from 'react-bootstrap';
-
-interface NavBarProps {}
+import { Container, Navbar, Nav } from 'react-bootstrap';
+// import { Link } from 'react-router-dom'
+interface NavBarProps { }
 
 const NavBar: FC<NavBarProps> = () => (
   <div className="NavBar">
-    <Navbar bg="light" variant="light">
-        <Container>
+    <Navbar bg="light" expand="lg"> <Container>
+      <Navbar.Brand href="home">Dronuts</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Checkout</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="menu">Doughnut Menu</Nav.Link>
+          <Nav.Link href="checkout">Checkout</Nav.Link>
+          <Nav.Link href="login">Login</Nav.Link>
         </Nav>
-        </Container>
+      </Navbar.Collapse>
+    </Container>
     </Navbar>
   </div>
 );
