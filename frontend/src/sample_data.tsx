@@ -1,5 +1,5 @@
 import { User, Doughnut, Drone, Order, Customer, Address } from './types'
-import ChocoImage from './assets/chocolate_glaze'
+import ChocoImage from './assets/chocolate_glaze.jpg'
 const drone_1 : Drone = {
   "id" : 1, 
   "charge" : 98, 
