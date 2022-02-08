@@ -5,6 +5,10 @@
     justify-content: row;
 }
 
+.card {
+    border: none;
+}
+
 p {
     font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
@@ -17,8 +21,4 @@ p {
 .row {
     display: flex;
     justify-content: row;
-}
-
-form {
-    padding: 1em;
 }

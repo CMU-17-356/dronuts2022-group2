@@ -9,7 +9,6 @@ interface CheckoutProps {}
 const Checkout: FC<CheckoutProps> = () => (
   <div className="Checkout">
     <div className='flex-container'>
-      CHECKOUT SCREEN
         <Cart></Cart>
         <div className = 'sidebar'>
             <div className = 'infoForm'>
