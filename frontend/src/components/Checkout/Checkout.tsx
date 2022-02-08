@@ -8,12 +8,7 @@ interface CheckoutProps {}
 
 const Checkout: FC<CheckoutProps> = () => (
   <div className="Checkout">
-<<<<<<< HEAD
-    <div className = 'flex-container'>
-=======
     <div className='flex-container'>
-      CHECKOUT SCREEN
->>>>>>> master
         <Cart></Cart>
         <div className = 'sidebar'>
             <div className = 'infoForm'>
