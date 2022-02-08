@@ -18,15 +18,15 @@ const DoughnutCartCard: FC<DoughnutCartCardProps> = () => (
                 <Card.Text>
                     This is a doughnut with chocolate glaze
                 </Card.Text>
+                <Form>
+                    <Form.Label>Quantity</Form.Label>
+                    <InputGroup className="mb-3">
+                            <Button variant="outline-success">+</Button>
+                            <FormControl aria-label="Quantity Input" />
+                            <Button variant="outline-danger">-</Button>
+                    </InputGroup>
+                </Form>
             </Card.Body>
-            <Form>
-                <Form.Label>Quantity</Form.Label>
-                <InputGroup className="mb-3">
-                        <Button variant="outline-success">+</Button>
-                        <FormControl aria-label="Quantity Input" />
-                        <Button variant="outline-danger">-</Button>
-                </InputGroup>
-            </Form>
         </Card>
     </div>
   </div>

@@ -7,7 +7,7 @@ interface DoughnutMenuCardProps { }
 
 const DoughnutMenuCard: FC<DoughnutMenuCardProps> = () => (
     <div className="DoughnutMenuCard">
-        <Card style={{ width: '18rem' }}>
+        <Card className="border rounded" style={{ width: '18rem' }}>
             <Card.Img variant="top" src={donut} />
             <Card.Body>
             <Card.Title>Chocolate glazed doughnut</Card.Title>
@@ -15,15 +15,15 @@ const DoughnutMenuCard: FC<DoughnutMenuCardProps> = () => (
                 <Card.Text>
                     This is a doughnut with chocolate glaze
                 </Card.Text>
+                <Form>
+                    <Form.Label>Quantity</Form.Label>
+                    <InputGroup className="mb-3">
+                            <Button variant="outline-success">+</Button>
+                            <FormControl aria-label="Quantity Input" />
+                            <Button variant="outline-danger">-</Button>
+                    </InputGroup>
+                </Form>
             </Card.Body>
-            <Form>
-                <Form.Label>Quantity</Form.Label>
-                <InputGroup className="mb-3">
-                        <Button variant="outline-success">+</Button>
-                        <FormControl aria-label="Quantity Input" />
-                        <Button variant="outline-danger">-</Button>
-                </InputGroup>
-            </Form>
         </Card>
     </div>
 );
