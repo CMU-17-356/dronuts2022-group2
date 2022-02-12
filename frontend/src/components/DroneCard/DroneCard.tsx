@@ -10,7 +10,7 @@ const DroneCard: FC<DroneCardProps> = () => (
       <Accordion.Item eventKey="0">
         <Accordion.Header>Order #1</Accordion.Header>
         <Accordion.Body>
-          Doughnut Order 1
+          Donut Order 1
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
