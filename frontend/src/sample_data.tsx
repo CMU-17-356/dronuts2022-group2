@@ -1,18 +1,19 @@
-import { User, Doughnut, Drone, Order, Customer, Address } from './types'
+import { User, Donut, Drone, Order, Customer, Address } from './types'
 import ChocoImage from './assets/chocolate_glaze.jpg'
+
 const drone_1 : Drone = {
-  "id" : 1, 
-  "charge" : 98, 
+  "id" : 1,
+  "charge" : 98,
 }
 
-const doughnut_1 : Doughnut = {
+const doughnut_1 : Donut = {
   "name" : "Chocolate",
   "price" : 1.99,
   "description": "A nice big chocolate torus.",
   "imageurl": ChocoImage,
 }
 
-const doughnut_2: Doughnut = {
+const doughnut_2: Donut = {
   "name" : "Vanilla",
   "price" : 1.99,
   "description" : "A nice big vanilla torus.",
@@ -30,7 +31,7 @@ const customer_1: Customer = {
 
 const employee_1 : User = {
   "username" : "rocksandcheeze",
-  "password" : "jksdyf576uryxdmmx87q2", 
+  "password" : "jksdyf576uryxdmmx87q2",
   "employee": true,
 }
 

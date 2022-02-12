@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import DoughnutMenuCard from '../DoughnutMenuCard/DoughnutMenuCard';
+import DonutMenuCard from '../DonutMenuCard/DonutMenuCard';
 import './OrderMenu.css';
 
 interface OrderMenuProps {}
@@ -7,8 +7,8 @@ interface OrderMenuProps {}
 const OrderMenu: FC<OrderMenuProps> = () => (
   <div className="OrderMenu">
     OrderMenu Component
-    A list of doughnut menu items
-    <DoughnutMenuCard></DoughnutMenuCard>
+    A list of donut menu items
+    <DonutMenuCard></DonutMenuCard>
   </div>
 );
 

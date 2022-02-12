@@ -11,7 +11,7 @@ const NavBar: FC<NavBarProps> = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="menu">Doughnut Menu</Nav.Link>
+          <Nav.Link href="menu">Donut Menu</Nav.Link>
           <Nav.Link href="checkout">Checkout</Nav.Link>
           <Nav.Link href="backlog">Backlog</Nav.Link>
           <Nav.Link href="drones">Drones</Nav.Link>
