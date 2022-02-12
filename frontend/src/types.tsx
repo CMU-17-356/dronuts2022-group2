@@ -29,7 +29,7 @@ interface Address {
 interface Order {
   "user" : User, // User
   "price" : Number, // Price of all donuts, ±tax.
-  "doughnuts": Donut[], // List of ordered doughnuts
+  "donuts": Donut[], // List of ordered doughnuts
   "quantities": Number[], // Parallel list to doughnuts with the number of doughnuts being bought.
   "destination": Address, // Location that the order is being sent to.
 }

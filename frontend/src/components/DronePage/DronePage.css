@@ -1,1 +1,5 @@
-.DronePage {}
+.DronePage {
+  width: 100%;
+  position: fixed; 
+  margin-top: 10px;
+}

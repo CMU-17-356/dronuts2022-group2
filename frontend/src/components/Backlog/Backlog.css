@@ -1,1 +1,8 @@
-.Backlog {}
+.Backlog {
+  width: 100%;
+  position: fixed; 
+  margin-top: 10px;
+}
+.Backlog .btn{
+  float: right;
+}
