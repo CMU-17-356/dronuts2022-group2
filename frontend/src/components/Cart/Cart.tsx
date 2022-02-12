@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import DoughnutCartCard from '../DoughnutCartCard/DoughnutCartCard';
+import DonutCartCard from '../DonutCartCard/DonutCartCard';
 import './Cart.css';
 
 interface CartProps {}
 
 const Cart: FC<CartProps> = () => (
   <div className="Cart">
-    <DoughnutCartCard></DoughnutCartCard>
+    <DonutCartCard></DonutCartCard>
   </div>
 );
 

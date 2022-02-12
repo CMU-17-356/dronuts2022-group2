@@ -1,22 +1,22 @@
 import React, { FC } from 'react';
-import './DoughnutCartCard.css';
+import './DonutCartCard.css';
 import { Card, Button, InputGroup, FormControl, Form } from 'react-bootstrap';
 import donut from '../../assets/chocolate_glaze.jpg';
 
-interface DoughnutCartCardProps {}
+interface DonutCartCardProps {}
 
-const DoughnutCartCard: FC<DoughnutCartCardProps> = () => (
-  <div className="DoughnutCartCard">
+const DonutCartCard: FC<DonutCartCardProps> = () => (
+  <div className="DonutCartCard">
     <div className = "row">
         <Card style={{ width: '50%' }}> 
             <Card.Img src={donut} />
         </Card>
         <Card style={{ width: '50%' }}> 
             <Card.Body>
-                <Card.Title>Chocolate glazed doughnut</Card.Title>
+                <Card.Title>Chocolate glazed donut</Card.Title>
                 <Card.Subtitle>$1.99</Card.Subtitle>
                 <Card.Text>
-                    This is a doughnut with chocolate glaze
+                    This is a donut with chocolate glaze
                 </Card.Text>
             </Card.Body>
             <Form>
@@ -32,4 +32,4 @@ const DoughnutCartCard: FC<DoughnutCartCardProps> = () => (
   </div>
 );
 
-export default DoughnutCartCard;
+export default DonutCartCard;
