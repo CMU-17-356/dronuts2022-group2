@@ -19,15 +19,12 @@ const DonutCartCard: FC<DonutCartCardProps> = (props : DonutCartCardProps) => {
   <div className="DonutCartCard">
     <div className = "row">
         <Card style={{ width: '50%' }}>
-            <Card.Img src={donut} />
+            <Card.Img src={props.donut.imageurl} />
         </Card>
         <Card style={{ width: '50%' }}>
             <Card.Body>
                 <Card.Title>{props.donut.name} </Card.Title>
                 <Card.Subtitle>${props.donut.price}</Card.Subtitle>
-                <Card.Text>
-                  {props.donut.description}
-                </Card.Text>
             </Card.Body>
             <Form>
                 <Form.Label>Quantity</Form.Label>

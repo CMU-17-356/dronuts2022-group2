@@ -1,5 +1,6 @@
 import { User, Donut, Drone, Order, Customer, Address } from './types'
 import ChocoImage from './assets/chocolate_glaze.jpg'
+import GlazedImage from './assets/original_glaze.jpg'
 
 const drone_1 : Drone = {
   "id" : 1,
@@ -7,17 +8,17 @@ const drone_1 : Drone = {
 }
 
 const donut1 : Donut = {
-  "name" : "Chocolate",
+  "name" : "Chocolate Glaze",
   "price" : 1.99,
   "description": "A nice big chocolate torus.",
   "imageurl": ChocoImage,
 }
 
 const donut2: Donut = {
-  "name" : "Vanilla",
+  "name" : "Original Glaze",
   "price" : 1.99,
-  "description" : "A nice big vanilla torus.",
-  "imageurl": ChocoImage,
+  "description" : "A nice big glazed torus.",
+  "imageurl": GlazedImage,
 }
 
 const donuts = [donut1, donut2]
