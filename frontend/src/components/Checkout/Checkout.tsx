@@ -1,15 +1,16 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Cart from '../Cart/Cart';
 import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import PaymentInfo from '../PaymentInfo/PaymentInfo';
 import './Checkout.css';
+import { donuts } from '../../sample_data'
 
 interface CheckoutProps {}
 
 const Checkout: FC<CheckoutProps> = () => (
   <div className="Checkout">
     <div className='flex-container'>
-        <Cart></Cart>
+        <Cart donuts={donuts}></Cart>
         <div className = 'sidebar'>
             <div className = 'infoForm'>
                 <DeliveryInfo></DeliveryInfo>

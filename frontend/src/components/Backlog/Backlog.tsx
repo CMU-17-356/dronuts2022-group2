@@ -10,7 +10,7 @@ interface BacklogProps {}
 const Backlog: FC<BacklogProps> = () => (
   <Accordion className="Backlog">
     {orders.map((order, ind) => (
-    <Accordion.Item eventKey={String(ind)}>
+    <Accordion.Item key={ind} eventKey={String(ind)}>
         <Accordion.Header>
           <Container>
             <Row>
@@ -24,8 +24,8 @@ const Backlog: FC<BacklogProps> = () => (
               </Col>
             </Row>
           </Container>
-          
-        
+
+
         </Accordion.Header>
         <OrderCard order={order} />
       </Accordion.Item>

@@ -9,7 +9,7 @@ const OrderCard: FC<OrderCardProps> = (props) => (
   <div className="OrderCard">
     <Accordion.Body>
       {props.order.donuts.map((donut, ind) => (
-          <Container>
+          <Container key={ind}>
             <Row>
           <Col xs={4}>
             <Image src={String(donut.imageurl)} />
