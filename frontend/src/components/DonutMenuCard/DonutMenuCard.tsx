@@ -14,6 +14,12 @@ const DonutMenuCard: FC<DonutMenuCardProps> = (props : DonutMenuCardProps) => {
     if (quantity > 0) setQuantity(quantity - 1);
   }
 
+  const updateQuantity = (val : string) => {
+    const parsed = parseInt(val);
+    if (isNaN(parsed)) { setQuantity(0); }
+    else setQuantity(parsed);
+  }
+
   return (
   <div className="DonutCartCard">
     <div className = "row">
@@ -30,7 +36,7 @@ const DonutMenuCard: FC<DonutMenuCardProps> = (props : DonutMenuCardProps) => {
                 <Form.Label>Quantity</Form.Label>
                 <InputGroup className="mb-3">
                   <Button variant="outline-danger" onClick={handleDecr}>-</Button>
-                  <FormControl aria-label="Quantity Input" value={quantity} />
+                  <FormControl aria-label="Quantity Input" value={quantity} onChange={(event)=>updateQuantity(event.target.value)}/>
                   <Button variant="outline-success" onClick={() => setQuantity(quantity + 1)}>+</Button>
                 </InputGroup>
             </Form>

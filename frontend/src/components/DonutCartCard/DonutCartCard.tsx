@@ -1,7 +1,6 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import './DonutCartCard.css';
 import { Card, Button, InputGroup, FormControl, Form } from 'react-bootstrap';
-import donut from '../../assets/chocolate_glaze.jpg';
 import { Donut } from '../../types';
 
 interface DonutCartCardProps {
@@ -13,6 +12,12 @@ const DonutCartCard: FC<DonutCartCardProps> = (props : DonutCartCardProps) => {
 
   const handleDecr = () => {
     if (quantity > 0) setQuantity(quantity - 1);
+  }
+
+  const updateQuantity = (val : string) => {
+    const parsed = parseInt(val);
+    if (isNaN(parsed)) { setQuantity(0); }
+    else setQuantity(parsed);
   }
 
   return (
@@ -30,7 +35,7 @@ const DonutCartCard: FC<DonutCartCardProps> = (props : DonutCartCardProps) => {
                 <Form.Label>Quantity</Form.Label>
                 <InputGroup className="mb-3">
                   <Button variant="outline-danger" onClick={handleDecr}>-</Button>
-                  <FormControl aria-label="Quantity Input" value={quantity} />
+                  <FormControl aria-label="Quantity Input" value={quantity} onChange={(event)=>updateQuantity(event.target.value)}/>
                   <Button variant="outline-success" onClick={() => setQuantity(quantity + 1)}>+</Button>
                 </InputGroup>
             </Form>

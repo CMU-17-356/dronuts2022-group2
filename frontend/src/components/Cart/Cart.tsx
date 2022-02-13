@@ -9,7 +9,7 @@ interface CartProps {
 }
 
 const Cart: FC<CartProps> = (props : CartProps) => {
-  const cartCards = props.donuts.map((donut : Donut) => <DonutCartCard donut={donut}></DonutCartCard>);
+  const cartCards = props.donuts.map((donut : Donut) => <DonutCartCard key={donut.name} donut={donut}></DonutCartCard>);
   return (
     <div className="Cart">
       {cartCards}
