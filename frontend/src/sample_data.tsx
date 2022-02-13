@@ -1,11 +1,12 @@
-import { User, Donut, Drone, Order, Customer, Address } from './types'
+import { Donut, Order, Customer, Address } from './types'
 import ChocoImage from './assets/chocolate_glaze.jpg'
 import GlazedImage from './assets/original_glaze.jpg'
+import VFImage from './assets/vanilla_frosted.jpg'
 
-const drone_1 : Drone = {
-  "id" : 1,
-  "charge" : 98,
-}
+// const drone_1 : Drone = {
+//   "id" : 1,
+//   "charge" : 98,
+// }
 
 const donut1 : Donut = {
   "name" : "Chocolate Glaze",
@@ -21,7 +22,14 @@ const donut2: Donut = {
   "imageurl": GlazedImage,
 }
 
-const donuts = [donut1, donut2]
+const donut3: Donut = {
+  "name" : "Vanilla Frosted",
+  "price" : 1.99,
+  "description" : "A large, frosted vanilla torus.",
+  "imageurl": VFImage,
+}
+
+const donuts = [donut1, donut2, donut3]
 
 const customer_1: Customer = {
   "username" : "ricksanchez",
@@ -32,11 +40,11 @@ const customer_1: Customer = {
     "employee": false,
 }
 
-const employee_1 : User = {
-  "username" : "rocksandcheeze",
-  "password" : "jksdyf576uryxdmmx87q2",
-  "employee": true,
-}
+// const employee_1 : User = {
+//   "username" : "rocksandcheeze",
+//   "password" : "jksdyf576uryxdmmx87q2",
+//   "employee": true,
+// }
 
 const location_1: Address = {
     'street': "1337 Leet Palace",
@@ -53,4 +61,12 @@ const order_1: Order = {
   "destination": location_1,
 }
 
-export { donuts, order_1 }
+const order_2: Order = {
+  "user" : customer_1,
+  "price" : 2.08,
+  "donuts" : [donut1, donut2],
+  "quantities" : [1, 2],
+  "destination": location_1,
+}
+
+export { donuts, order_1, order_2 }

@@ -3,6 +3,7 @@ interface User {
   "password" : string, // Hashed password
   "employee": boolean, // boolean for whether user is an employee
 }
+
 interface Customer extends User {
   "previous_orders": Donut[], // List of donuts they've ordered
 };

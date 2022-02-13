@@ -1,10 +1,9 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Cart from '../Cart/Cart';
 import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import PaymentInfo from '../PaymentInfo/PaymentInfo';
 import './Checkout.css';
 import { donuts } from '../../sample_data'
-import { Donut } from '../../types'
 
 interface CheckoutProps {}
 

@@ -1,7 +1,6 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import DonutCartCard from '../DonutCartCard/DonutCartCard';
 import './Cart.css';
-import { donuts } from '../../sample_data'
 import { Donut } from '../../types'
 
 interface CartProps {
