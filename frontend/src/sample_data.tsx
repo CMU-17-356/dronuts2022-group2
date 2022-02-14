@@ -1,12 +1,26 @@
-import { Donut, Order, Customer, Address } from './types'
+import { Donut, Order, Customer, Address, Drone } from './types'
 import ChocoImage from './assets/chocolate_glaze.jpg'
 import GlazedImage from './assets/original_glaze.jpg'
 import VFImage from './assets/vanilla_frosted.jpg'
 
-// const drone_1 : Drone = {
-//   "id" : 1,
-//   "charge" : 98,
-// }
+const drone1 : Drone = {
+  "id" : 1,
+  "charge" : 98,
+  "destinations" : [
+    "4500 Centre Ave",
+    "1000 Morewood Ave"
+  ]
+}
+
+const drone2 : Drone = {
+  "id" : 2,
+  "charge" : 42,
+  "destinations" : [
+    "5000 Forbes Ave",
+  ]
+}
+
+const drones = [drone1, drone2]
 
 const donut1 : Donut = {
   "name" : "Chocolate Glaze",
@@ -69,4 +83,4 @@ const order_2: Order = {
   "destination": location_1,
 }
 
-export { donuts, order_1, order_2 }
+export { donuts, order_1, order_2, drones }

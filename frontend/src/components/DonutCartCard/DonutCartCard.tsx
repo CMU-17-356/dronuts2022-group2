@@ -8,7 +8,7 @@ interface DonutCartCardProps {
 }
 
 const DonutCartCard: FC<DonutCartCardProps> = (props : DonutCartCardProps) => {
-  const [quantity, setQuantity] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>(1);
 
   const handleDecr = () => {
     if (quantity > 0) setQuantity(quantity - 1);

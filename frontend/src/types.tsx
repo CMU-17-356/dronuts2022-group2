@@ -11,6 +11,7 @@ interface Customer extends User {
 interface Drone {
   "id" : number, // Unique drone ID
   "charge" : number, // Remaining charge % [0,100]
+  "destinations": string[] // Drone's current route
 }
 
 interface Donut {
