@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Accordion, Container, Row, Col, Button } from 'react-bootstrap';
+import { Accordion, Container, Row, Col } from 'react-bootstrap';
 import OrderCard from '../OrderCard/OrderCard';
 import { order_1, order_2 } from "../../sample_data";
 import './Backlog.css';
@@ -16,11 +16,6 @@ const Backlog: FC<BacklogProps> = () => (
             <Row>
               <Col>
                 Order {String(ind)}
-              </Col>
-              <Col>
-                <div onClick={e=>e.stopPropagation()}>
-                  <Button>Done</Button>
-                </div>
               </Col>
             </Row>
           </Container>

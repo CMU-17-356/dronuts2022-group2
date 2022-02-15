@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Accordion, Col, Container, Row, Image } from 'react-bootstrap';
+import { Accordion, Col, Container, Row, Image, Button } from 'react-bootstrap';
 import { Order } from "../../types";
 import './OrderCard.css';
 
@@ -8,9 +8,11 @@ interface OrderCardProps {order: Order}
 const OrderCard: FC<OrderCardProps> = (props) => (
   <div className="OrderCard">
     <Accordion.Body>
+      <Container>
+        <Row>
+        <Col xs={10}>
       {props.order.donuts.map((donut, ind) => (
-          <Container key={ind}>
-            <Row>
+        <Row key={ind}>
           <Col xs={4}>
             <Image src={String(donut.imageurl)} />
           </Col>
@@ -21,9 +23,15 @@ const OrderCard: FC<OrderCardProps> = (props) => (
             <p>x{props.order.quantities[ind]}</p>
           </Col>
           </Row>
-          </Container>
-      ))
-    }
+      ))}
+        </Col>
+      <Col xs={2}>
+        <div onClick={e=>e.stopPropagation()}>
+          <Button>Send to drone</Button>
+        </div>
+          </Col>
+          </Row>
+    </Container>
     </Accordion.Body>
   </div>
 );
