@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { drones } from '../../sample_data';
-import { Drone } from '../../types';
+import { Drone } from '../../../database/schemas/drone_schema';
 import DroneCard from '../DroneCard/DroneCard';
 import './DronePage.css';
 

@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import './DonutCartCard.css';
 import { Card, Button, InputGroup, FormControl, Form } from 'react-bootstrap';
-import { Donut } from '../../types';
+import { Donut } from '../../../database/schemas/donut_schema';
 
 interface DonutCartCardProps {
   donut : Donut

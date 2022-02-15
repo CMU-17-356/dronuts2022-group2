@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Accordion, Col, Container, Row, Image, Button } from 'react-bootstrap';
-import { Order } from "../../types";
+import { Order } from "../../../database/schemas/order_schema";
 import './OrderCard.css';
 
 interface OrderCardProps {order: Order}

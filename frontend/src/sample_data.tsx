@@ -1,4 +1,8 @@
-import { Donut, Order, Customer, Address, Drone } from './types'
+import { Order } from '../database/schemas/order_schema'
+import { Donut } from '../database/schemas/donut_schema'
+import { Drone } from '../database/schemas/drone_schema'
+import { Address } from '../database/schemas/address_schema'
+import { User } from  '../database/schemas/user_schema'
 import ChocoImage from './assets/chocolate_glaze.jpg'
 import GlazedImage from './assets/original_glaze.jpg'
 import VFImage from './assets/vanilla_frosted.jpg'
@@ -45,7 +49,7 @@ const donut3: Donut = {
 
 const donuts = [donut1, donut2, donut3]
 
-const customer_1: Customer = {
+const customer_1: User = {
   "username" : "ricksanchez",
   "password": "longrandomhash",
   "previous_orders": [

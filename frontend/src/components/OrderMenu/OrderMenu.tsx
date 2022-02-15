@@ -3,7 +3,7 @@ import DonutMenuCard from '../DonutMenuCard/DonutMenuCard';
 import './OrderMenu.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { donuts } from '../../sample_data'
-import { Donut } from '../../types'
+import { Donut } from '../../../database/schemas/donut_schema'
 
 interface OrderMenuProps {}
 
