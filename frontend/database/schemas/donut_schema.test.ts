@@ -23,7 +23,7 @@ test('Allow no description', (done) => {
   const donut = new DonutModel({ name: 'chocolate', price: 1.69 });
 
   donut.validate(function(err : any) {
-    expect(err).toBeUndefined;
+    expect(err).toBeUndefined();
     done();
   });
 });

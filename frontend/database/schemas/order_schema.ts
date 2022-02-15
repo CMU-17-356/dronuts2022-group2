@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 import { Donut, donutSchema } from './donut_schema';
 import { User, userSchema } from './user_schema';
-import { Address, addressSchema } from './address_schema';
+import { Address, } from './address_schema';
 
 
 export interface Order {
