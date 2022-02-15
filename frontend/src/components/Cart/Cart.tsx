@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import DonutCartCard from '../DonutCartCard/DonutCartCard';
 import './Cart.css';
-import { Donut } from '../../types'
+import { Donut } from '../../../database/schemas/donut_schema'
 
 interface CartProps {
   donuts : Donut[]

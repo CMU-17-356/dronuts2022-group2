@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import './DonutMenuCard.css';
-import { Donut } from '../../types';
+import { Donut } from '../../../database/schemas/donut_schema';
 import { Card, Button, InputGroup, FormControl, Form } from 'react-bootstrap';
 
 interface DonutMenuCardProps {

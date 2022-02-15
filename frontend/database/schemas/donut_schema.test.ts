@@ -1,7 +1,7 @@
-import { Donut } from './donut_schema';
+import { DonutModel } from './donut_schema';
 
 test('Donut name required field', (done) => {
-  const donut = new Donut();
+  const donut = new DonutModel();
 
   donut.validate(function(err : any) {
     expect(err.errors.name).toBeDefined();
@@ -10,7 +10,7 @@ test('Donut name required field', (done) => {
 });
 
 test('No negative prices', (done) => {
-  const donut = new Donut({ name: 'chocolate', price: -69 });
+  const donut = new DonutModel({ name: 'chocolate', price: -69 });
 
   donut.validate(function(err : any) {
     expect(err.errors.name).toBeUndefined();
@@ -20,7 +20,7 @@ test('No negative prices', (done) => {
 });
 
 test('Allow no description', (done) => {
-  const donut = new Donut({ name: 'chocolate', price: 1.69 });
+  const donut = new DonutModel({ name: 'chocolate', price: 1.69 });
 
   donut.validate(function(err : any) {
     expect(err).toBeUndefined;

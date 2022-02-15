@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Card } from 'react-bootstrap';
-import { Drone } from '../../types';
+import { Drone } from '../../../database/schemas/drone_schema';
 import './DroneCard.css';
 
 interface DroneCardProps {
