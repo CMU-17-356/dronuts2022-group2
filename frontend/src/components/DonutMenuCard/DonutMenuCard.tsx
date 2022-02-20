@@ -20,6 +20,11 @@ const DonutMenuCard: FC<DonutMenuCardProps> = (props : DonutMenuCardProps) => {
     else setQuantity(parsed);
   }
 
+  const onSubmit = (e) => {
+    console.log(quantity);
+    e.preventDefault();
+  };
+
   return (
   <div className="DonutCartCard">
     <div className = "row">
@@ -32,7 +37,7 @@ const DonutMenuCard: FC<DonutMenuCardProps> = (props : DonutMenuCardProps) => {
                   {props.donut.description}
                 </Card.Text>
             </Card.Body>
-            <Form>
+            <Form onSubmit={onSubmit}>
                 <Form.Label>Quantity</Form.Label>
                 <InputGroup className="mb-3">
                   <Button variant="outline-danger" onClick={handleDecr}>-</Button>
@@ -40,7 +45,7 @@ const DonutMenuCard: FC<DonutMenuCardProps> = (props : DonutMenuCardProps) => {
                   <Button variant="outline-success" onClick={() => setQuantity(quantity + 1)}>+</Button>
                 </InputGroup>
             </Form>
-            <Button variant='primary'>
+            <Button variant="primary" type="submit" onClick={onSubmit}>
               Add to Cart
             </Button>
         </Card>
