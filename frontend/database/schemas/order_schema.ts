@@ -3,8 +3,8 @@ import { Donut, donutSchema } from './donut_schema';
 import { User, userSchema } from './user_schema';
 import { Address, } from './address_schema';
 
-
 export interface Order {
+  "order_id" : number, // Unique identifier for this order.
   "user" : User, // User
   "price" : number, // Price of all donuts, ±tax.
   "donuts": Donut[], // List of ordered doughnuts
@@ -13,6 +13,7 @@ export interface Order {
 }
 
 const orderSchema = new Schema<Order>({
+  order_id: { type: Number, min: 0, required: true },
   // User who placed order.
   user: { type: userSchema, required: true },
   // Total price of order.

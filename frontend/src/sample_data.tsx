@@ -72,6 +72,7 @@ const location_1: Address = {
 }
 
 const order_1: Order = {
+  "order_id" : 1,
   "user" : customer_1,
   "price" : 2.08,
   "donuts" : [donut1, donut2],
@@ -80,6 +81,7 @@ const order_1: Order = {
 }
 
 const order_2: Order = {
+  "order_id" : 2,
   "user" : customer_1,
   "price" : 2.08,
   "donuts" : [donut1, donut2],
