@@ -1,3 +1,9 @@
+/**
+ *  Populates the DB with the donuts by adding each donut in
+ *  frontend/src/assets/ to the database.
+ *
+ *  Run with ts-node makeDB.ts.
+ */
 import mongoose from 'mongoose';
 import 'dotenv/config';
 import fs from 'fs';

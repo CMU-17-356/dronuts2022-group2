@@ -16,6 +16,10 @@ app.get('/', (req:express.Request, res:express.Response) => {
   res.send('Hello World!');
 });
 
+/** Deletes an order from the database with the matching order.order_id.
+ *
+ * @param req.body is an orders object.
+ */
 app.post('/completed_order', (req: express.Request, res: express.Response) => {
   console.log(req.body);
   const order = req.body.order;
@@ -36,6 +40,10 @@ app.post('/completed_order', (req: express.Request, res: express.Response) => {
       });
 });
 
+/** Add a new order to the Orders collection in the DB.
+ *
+ * @param req.body is an orders object.
+ */
 app.post('/new_order', (req: express.Request, res: express.Response) => {
   console.log(req.body);
   const order = new OrderModel(
