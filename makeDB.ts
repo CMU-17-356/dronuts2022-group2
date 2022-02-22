@@ -15,9 +15,10 @@ const donutPrice = 1.69;
 const imageDir = './frontend/src/assets/';
 
 // Delete all donuts so we don't get duplicates.
-DonutModel.deleteMany({}, addFiles);
+DonutModel.deleteMany({}, addDonuts);
 
-function addFiles() {
+/** Add all donuts to the database  */
+function addDonuts() {
   fs.readdir(imageDir, (err, files) => {
     let numImages = 0;
     files.forEach((fileName, i) => {

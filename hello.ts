@@ -24,7 +24,7 @@ app.post('/completed_order', (req: express.Request, res: express.Response) => {
   console.log(req.body);
   const order = req.body.order;
 
-  OrderModel.deleteOne({order_id : {$eq: order.order_id}})
+  OrderModel.deleteOne({ order_id: { $eq: order.order_id } })
       .then((result: any) => {
         console.log(result);
         res.status(201).json({
@@ -47,7 +47,7 @@ app.post('/completed_order', (req: express.Request, res: express.Response) => {
 app.post('/new_order', (req: express.Request, res: express.Response) => {
   console.log(req.body);
   const order = new OrderModel(
-    req.body.order
+      req.body.order,
   );
 
   order
@@ -75,7 +75,7 @@ app.post('/new_order', (req: express.Request, res: express.Response) => {
 app.post('/new_user', (req: express.Request, res: express.Response) => {
   console.log(req.body);
   const user = new UserModel(
-    req.body.user
+      req.body.user,
   );
 
   user
