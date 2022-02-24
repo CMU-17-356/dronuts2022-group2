@@ -1,4 +1,4 @@
-import { Dispatch, FC, Reducer } from 'react';
+import { Dispatch, FC } from 'react';
 import DonutCard from '../DonutCard/DonutCard';
 import './OrderMenu.css';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -14,7 +14,7 @@ interface OrderMenuProps {
 const get_init_donut_quantity = (cart: UserCart, donut: Donut) => {
   let init_q = 0
   for (let i = 0; i < cart.donuts.length; i++) {
-    if (cart.donuts[i].name == donut.name) {
+    if (cart.donuts[i].name === donut.name) {
       init_q = cart.quantities[i];
     }
   }
