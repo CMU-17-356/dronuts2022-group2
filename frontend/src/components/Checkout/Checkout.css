@@ -4,20 +4,21 @@
 }
 
 .flex-container {
-    justify-content: space-around;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.Cart{
-    width: 60%;
+.Cart {
+    width: 70%;
+    justify-content: flex-start; 
+    display: inline-flex;
 }
 
 .sidebar {
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 .infoForm {

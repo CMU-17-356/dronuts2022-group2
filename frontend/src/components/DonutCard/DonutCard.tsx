@@ -32,17 +32,15 @@ const DonutCartCard: FC<DonutCartCardProps> = (props : DonutCartCardProps) => {
   }
 
   return (
-  <div className="DonutCartCard">
+  <div className="DonutCard">
     <div className = "row">
         <Card>
             <Card.Img src={props.donut.imageurl} />
-            <Card.Body>
-                <Card.Title>{props.donut.name} </Card.Title>
-                <Card.Subtitle>${props.donut.price}</Card.Subtitle>
-                <Card.Text>
-                  {props.donut.description}
-                </Card.Text>
-            </Card.Body>
+              <Card.Title>{props.donut.name} </Card.Title>
+              <Card.Subtitle>${props.donut.price}</Card.Subtitle>
+              <Card.Text>
+                {props.donut.description}
+              </Card.Text>
             <Form>
                 <Form.Label>Quantity</Form.Label>
                 <InputGroup className="mb-3">
