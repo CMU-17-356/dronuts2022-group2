@@ -6,3 +6,8 @@
     width: 100%; /* Full width */
     z-index: 10;
 }
+.NavBar a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}

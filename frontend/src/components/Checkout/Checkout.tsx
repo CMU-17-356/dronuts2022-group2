@@ -1,16 +1,20 @@
-import { FC } from 'react';
+import { Dispatch, FC } from 'react';
 import Cart from '../Cart/Cart';
 import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import PaymentInfo from '../PaymentInfo/PaymentInfo';
 import './Checkout.css';
 import { donuts } from '../../sample_data'
+import { UserCart, CartReducerAction } from '../../types/userCart';
 
-interface CheckoutProps {}
+interface CheckoutProps {
+  userCart: UserCart,
+  updateCart: Dispatch<CartReducerAction>,
+}
 
-const Checkout: FC<CheckoutProps> = () => (
+const Checkout: FC<CheckoutProps> = (props) => (
   <div className="Checkout">
     <div className='flex-container'>
-        <Cart donuts={donuts}></Cart>
+        <Cart userCart={props.userCart} updateCart={props.updateCart}></Cart>
         <div className = 'sidebar'>
             <div className = 'infoForm'>
                 <DeliveryInfo></DeliveryInfo>

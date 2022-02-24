@@ -1,42 +1,54 @@
-import { FC, useState } from 'react';
-import './DonutCartCard.css';
+import { FC, Dispatch, useState } from 'react';
+import './DonutCard.css';
 import { Card, Button, InputGroup, FormControl, Form } from 'react-bootstrap';
 import { Donut } from '../../../database/schemas/donut_schema';
+import { CartReducerAction } from '../../types/userCart';
 
 interface DonutCartCardProps {
-  donut : Donut
+  donut: Donut
+  initalQuantity: number
+  updateCart: Dispatch<CartReducerAction>,
 }
 
 const DonutCartCard: FC<DonutCartCardProps> = (props : DonutCartCardProps) => {
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState(props.initalQuantity);
 
-  const handleDecr = () => {
-    if (quantity > 0) setQuantity(quantity - 1);
+  const updateQuantity = (input: string | number) => {
+    let new_quantity = 0;
+    if (typeof input == 'string') {
+      new_quantity = parseInt(input);
+    } else {
+      new_quantity = input
+    }
+    if (isNaN(new_quantity) || new_quantity < 0) {
+      new_quantity = 0
+    }
+    props.updateCart({ name: 'set', donut: props.donut, quantity: new_quantity })
+    setQuantity(new_quantity)
   }
 
-  const updateQuantity = (val : string) => {
-    const parsed = parseInt(val);
-    if (isNaN(parsed)) { setQuantity(0); }
-    else setQuantity(parsed);
+  const handleDecr = () => {
+    if (quantity > 0) updateQuantity(quantity - 1);
   }
 
   return (
   <div className="DonutCartCard">
     <div className = "row">
-        <Card style={{ width: '50%' }}>
+        <Card>
             <Card.Img src={props.donut.imageurl} />
-        </Card>
-        <Card style={{ width: '50%' }}>
             <Card.Body>
                 <Card.Title>{props.donut.name} </Card.Title>
                 <Card.Subtitle>${props.donut.price}</Card.Subtitle>
+                <Card.Text>
+                  {props.donut.description}
+                </Card.Text>
             </Card.Body>
             <Form>
                 <Form.Label>Quantity</Form.Label>
                 <InputGroup className="mb-3">
                   <Button variant="outline-danger" onClick={handleDecr}>-</Button>
                   <FormControl aria-label="Quantity Input" value={quantity} onChange={(event)=>updateQuantity(event.target.value)}/>
-                  <Button variant="outline-success" onClick={() => setQuantity(quantity + 1)}>+</Button>
+                  <Button variant="outline-success" onClick={() => updateQuantity(quantity + 1)}>+</Button>
                 </InputGroup>
             </Form>
         </Card>
