@@ -12,31 +12,29 @@ import Checkout from './components/Checkout/Checkout';
 import Backlog from './components/Backlog/Backlog';
 import DronePage from './components/DronePage/DronePage';
 import Login from './components/Login/Login';
-import { UserCart, cartReducer, CartReducerAction} from './types/userCart';
+import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
 /**
  * Main function to run the app
  * @return {React.FC}
  */
 function App() {
-  const [userCart, updateCart] = useReducer<Reducer<UserCart,CartReducerAction>>(cartReducer, {
-    "donuts": [],
-    "quantities": [],
+  const [userCart, updateCart] = useReducer<Reducer<UserCart, CartReducerAction>>(cartReducer, {
+    "donut_orders": [],
   });
-  console.log("Quantities: "+ userCart.quantities)
   return (
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-          <NavBar/>
+          <NavBar />
           <Routes>
-            <Route element={<OrderMenu  userCart={userCart} updateCart={ updateCart } />} path="/"/>
-            <Route element={<Checkout userCart={userCart} updateCart={ updateCart }/>} path="/checkout" />
-            <Route element={<OrderMenu  userCart={userCart} updateCart={ updateCart }/>} path="menu"/>
-            <Route element={<Backlog/>} path="backlog"/>
-            <Route element={<DronePage/>} path="drones"/>
-            <Route element={<Login/>} path="login"/>
+            <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="/" />
+            <Route element={<Checkout userCart={userCart} updateCart={updateCart} />} path="/checkout" />
+            <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu" />
+            <Route element={<Backlog />} path="backlog" />
+            <Route element={<DronePage />} path="drones" />
+            <Route element={<Login />} path="login" />
           </Routes>
-          </BrowserRouter>
+        </BrowserRouter>
       </header>
     </div>
   );

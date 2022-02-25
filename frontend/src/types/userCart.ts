@@ -1,9 +1,13 @@
 import { Donut } from "../../database/schemas/donut_schema"
 
 
+export interface DonutOrder{
+  donut: Donut,
+  quantity: number,
+}
+
 export interface UserCart {
-  "donuts": Donut[], // List of ordered doughnuts
-  "quantities": number[], // Parallel list to doughnuts with the number of doughnuts being bought.
+  "donut_orders": DonutOrder[],
 }
 
 export type CartReducerAction = {
@@ -17,7 +21,7 @@ const deepCopy = (x) =>{
 }
 
 export const cartReducer = (state: UserCart, action: CartReducerAction) => {
-  const new_cart: UserCart = {"donuts":[], "quantities":[]}
+  const new_cart: UserCart = { "donut_orders": [] }
   switch (action.name) {
     case "set":
       if (action.quantity === undefined || action.donut === undefined) {
@@ -25,23 +29,20 @@ export const cartReducer = (state: UserCart, action: CartReducerAction) => {
         break;
       }
       let found = false;
-      for (let i = 0; i < state.donuts.length; i++) {
-        new_cart.donuts.push(deepCopy(state.donuts[i]));
-        new_cart.quantities.push(state.quantities[i]);
-        if (!found && state.donuts[i].name === action.donut.name) {
+      for (let i = 0; i < state.donut_orders.length; i++) {
+        new_cart.donut_orders.push(deepCopy(state.donut_orders[i]));
+        if (!found && state.donut_orders[i].donut.name === action.donut.name) {
           found = true;
           if (action.quantity === 0) { // don't add to cart if quantity is 0
-            new_cart.donuts.pop();
-            new_cart.quantities.pop();
+            new_cart.donut_orders.pop();
           } else {
-            new_cart.quantities[i] = action.quantity;
+            new_cart.donut_orders[i].quantity = action.quantity;
           }
         }
       }
       // Add to cart
       if (!found && action.quantity > 0) {
-        new_cart.donuts.push(deepCopy(action.donut))
-        new_cart.quantities.push(action.quantity)
+        new_cart.donut_orders.push({ 'donut': deepCopy(action.donut), 'quantity': action.quantity });
       }
       break;
     case "clear":

@@ -13,9 +13,9 @@ interface OrderMenuProps {
 
 const get_init_donut_quantity = (cart: UserCart, donut: Donut) => {
   let init_q = 0
-  for (let i = 0; i < cart.donuts.length; i++) {
-    if (cart.donuts[i].name === donut.name) {
-      init_q = cart.quantities[i];
+  for (let order of cart.donut_orders) {
+    if (order.donut.name === donut.name) {
+      init_q = order.quantity;
     }
   }
   return init_q
