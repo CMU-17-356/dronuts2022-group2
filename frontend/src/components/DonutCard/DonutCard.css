@@ -1,15 +1,16 @@
-.DonutCartCard {
+.DonutCard {
+    width: 10em;
     background-color: white;
     padding: 1em;
     display: flex;
     justify-content: row;
 }
 
-.card {
+.DonutCard .card {
     border: none;
 }
 
-p {
+.DonutCard p {
     font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
     font-weight: var(--bs-body-font-weight);
@@ -18,7 +19,7 @@ p {
     text-align: var(--bs-body-text-align);
 }
 
-.row {
+.DonutCard .row {
     display: flex;
     justify-content: row;
 }

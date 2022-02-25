@@ -1,14 +1,16 @@
-import { FC } from 'react';
-import DonutCartCard from '../DonutCartCard/DonutCartCard';
+import { FC, Dispatch } from 'react';
+import DonutCard from '../DonutCard/DonutCard';
 import './Cart.css';
-import { Donut } from '../../../database/schemas/donut_schema'
+import { UserCart, CartReducerAction, DonutOrder } from '../../types/userCart';
 
 interface CartProps {
-  donuts : Donut[]
+  userCart: UserCart,
+  updateCart: Dispatch<CartReducerAction>,
 }
 
-const Cart: FC<CartProps> = (props : CartProps) => {
-  const cartCards = props.donuts.map((donut : Donut) => <DonutCartCard key={donut.name} donut={donut}></DonutCartCard>);
+const Cart: FC<CartProps> = (props: CartProps) => {
+  const cartCards = props.userCart.donut_orders.map((order: DonutOrder) =>
+    <DonutCard key={order.donut.name} donut={order.donut} initalQuantity={order.quantity} updateCart={props.updateCart}></DonutCard>);
   return (
     <div className="Cart">
       {cartCards}

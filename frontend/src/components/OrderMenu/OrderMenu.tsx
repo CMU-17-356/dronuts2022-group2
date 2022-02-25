@@ -1,15 +1,29 @@
-import { FC } from 'react';
-import DonutMenuCard from '../DonutMenuCard/DonutMenuCard';
+import { Dispatch, FC } from 'react';
+import DonutCard from '../DonutCard/DonutCard';
 import './OrderMenu.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { donuts } from '../../sample_data'
 import { Donut } from '../../../database/schemas/donut_schema'
+import { UserCart, CartReducerAction } from '../../types/userCart';
 
-interface OrderMenuProps {}
+interface OrderMenuProps {
+  userCart: UserCart,
+  updateCart: Dispatch<CartReducerAction>,
+}
 
-const OrderMenu: FC<OrderMenuProps> = () => {
+const get_init_donut_quantity = (cart: UserCart, donut: Donut) => {
+  let init_q = 0
+  for (let order of cart.donut_orders) {
+    if (order.donut.name === donut.name) {
+      init_q = order.quantity;
+    }
+  }
+  return init_q
+}
 
-  const menuCards = donuts.map((donut : Donut) => <DonutMenuCard key={donut.name} donut={donut}></DonutMenuCard>);
+const OrderMenu: FC<OrderMenuProps> = (props) => {
+  const menuCards = donuts.map((donut: Donut) =>
+    <DonutCard key={donut.name} donut={donut} initalQuantity={get_init_donut_quantity(props.userCart, donut)} updateCart={props.updateCart}></DonutCard>);
 
   return (
     <div className="OrderMenu">
