@@ -19,7 +19,6 @@ const NavBar: FC<NavBarProps> = (props) => {
       <Link to="backlog">Backlog</Link>
       <Link to="drones">Drones</Link>
     </>
-
   }
   return (
     <div className="NavBar">

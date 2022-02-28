@@ -14,6 +14,7 @@ import DronePage from './components/DronePage/DronePage';
 import Login from './components/Login/Login';
 import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
 import { loginType } from './types/loginType';
+import Home from './components/Home/Home';
 /**
  * Main function to run the app
  * @return {React.FC}
@@ -45,6 +46,7 @@ function App() {
           <Routes>
             {userTypeRoutes}
             <Route element={<Login updateUserType={updateUserType} />} path="login" />
+            <Route element={<Home />} path="*" />
           </Routes>
         </BrowserRouter>
       </header>
