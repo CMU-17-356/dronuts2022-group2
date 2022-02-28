@@ -1,4 +1,4 @@
-import { Reducer, useReducer } from 'react';
+import { Reducer, useReducer, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -13,6 +13,7 @@ import Backlog from './components/Backlog/Backlog';
 import DronePage from './components/DronePage/DronePage';
 import Login from './components/Login/Login';
 import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
+import { loginType } from './types/loginType';
 /**
  * Main function to run the app
  * @return {React.FC}
@@ -21,18 +22,29 @@ function App() {
   const [userCart, updateCart] = useReducer<Reducer<UserCart, CartReducerAction>>(cartReducer, {
     "donut_orders": [],
   });
+  const [userType, updateUserType] = useState<loginType>("none")
+  let userTypeRoutes = <></>
+  if (userType === "customer") {
+    userTypeRoutes = (<>
+        <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="/" /> <Route element={<Checkout userCart={userCart} updateCart={updateCart} />} path="/checkout" />
+        <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu" />
+      </>
+    )
+  } else if (userType === "employee") {
+    userTypeRoutes = (<>
+      <Route element={<Backlog />} path="backlog" />
+      <Route element={<DronePage />} path="drones" />
+      </>
+    )
+  }
   return (
     <div className="App">
       <header className="App-header">
         <BrowserRouter>
-          <NavBar />
+          <NavBar userType={userType}/>
           <Routes>
-            <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="/" />
-            <Route element={<Checkout userCart={userCart} updateCart={updateCart} />} path="/checkout" />
-            <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu" />
-            <Route element={<Backlog />} path="backlog" />
-            <Route element={<DronePage />} path="drones" />
-            <Route element={<Login />} path="login" />
+            {userTypeRoutes}
+            <Route element={<Login updateUserType={updateUserType} />} path="login" />
           </Routes>
         </BrowserRouter>
       </header>
