@@ -7,7 +7,6 @@ interface PaymentInfoProps {}
 
 const PaymentInfo: FC<PaymentInfoProps> = () => (
   <div className="PaymentInfo">
-    <Form>
         <Form.Group className="mb-3" controlId="formCardName">
             <Form.Label>Name on card</Form.Label>
             <Form.Control type="cardName" placeholder="Enter name on card" />
@@ -44,7 +43,6 @@ const PaymentInfo: FC<PaymentInfoProps> = () => (
         <Button variant="primary" type="submit">
             Submit
         </Button>
-    </Form>
   </div>
 );
 

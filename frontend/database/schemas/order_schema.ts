@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 import { Donut, donutSchema } from './donut_schema';
 import { User, userSchema } from './user_schema';
-import { Address, } from './address_schema';
+import { Address, addressSchema } from './address_schema';
 
 export interface Order {
   "order_id" : number, // Unique identifier for this order.
@@ -21,7 +21,7 @@ const orderSchema = new Schema<Order>({
   donuts: { type: [donutSchema], required:true },
   quantities: { type: [Number], required:true },
   // Address that order will be delivered to.
-  destination: { type: String },
+  destination: { type: addressSchema },
 });
 
 const OrderModel = mongoose.model<Order>('Order', orderSchema);
