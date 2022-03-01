@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import { Accordion, Container, Row, Col } from 'react-bootstrap';
 import OrderCard from '../OrderCard/OrderCard';
-import { order_1, order_2 } from "../../sample_data";
+import { Order } from "../../../database/schemas/order_schema";
 import './Backlog.css';
 
-const orders = [order_1, order_2]
-interface BacklogProps {}
+interface BacklogProps {
+  'orders': Order[]
+}
 
-const Backlog: FC<BacklogProps> = () => (
+const Backlog: FC<BacklogProps> = (props) => (
   <Accordion className="Backlog">
-    {orders.map((order, ind) => (
+    {props.orders.map((order, ind) => (
     <Accordion.Item key={ind} eventKey={String(ind)}>
         <Accordion.Header>
           <Container>

@@ -9,16 +9,17 @@ import { Address } from '../../../database/schemas/address_schema'
 import { Donut } from '../../../database/schemas/donut_schema'
 import { Order } from '../../../database/schemas/order_schema'
 import { customer_1 } from '../../sample_data'
+import { OrderReducerAction } from '../../types/orders';
 
 interface CheckoutProps {
   userCart: UserCart,
   updateCart: Dispatch<CartReducerAction>,
+  updateOrders: Dispatch<OrderReducerAction>,
 }
 
 const Checkout: FC<CheckoutProps> = (props) => {
 
   const submitForm = (e) => {
-    const name = e.target.formName.value
     const street = e.target.formStreetAddress.value
     const city = e.target.formCity.value
     const state = e.target.formState.value
@@ -46,7 +47,8 @@ const Checkout: FC<CheckoutProps> = (props) => {
       'quantities': quantities,
       "destination": address
     }
-    console.log(order_out)
+    props.updateOrders({ 'name': 'add', 'order': order_out });
+    props.updateCart({name: 'clear'})
     e?.preventDefault()
   }
 
