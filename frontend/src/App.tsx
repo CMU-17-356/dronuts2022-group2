@@ -12,6 +12,7 @@ import Checkout from './components/Checkout/Checkout';
 import Backlog from './components/Backlog/Backlog';
 import DronePage from './components/DronePage/DronePage';
 import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup'
 import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
 import { OrderReducerAction, orderReducer } from './types/orders';
 import { loginType } from './types/loginType';
@@ -51,6 +52,7 @@ function App() {
           <Routes>
             {userTypeRoutes}
             <Route element={<Login updateUserType={updateUserType} />} path="login*" />
+            <Route element={<Signup updateUserType={updateUserType} />} path="signup*" />
             <Route element={<Home />} path="*" />
           </Routes>
         </BrowserRouter>
