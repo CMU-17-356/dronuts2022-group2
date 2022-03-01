@@ -33,14 +33,14 @@ function App() {
   let userTypeRoutes = <></>
   if (userType === "customer") {
     userTypeRoutes = (<>
-      <Route element={<Checkout userCart={userCart} updateCart={updateCart} updateOrders={updateOrders}/>} path="checkout*" />
-      <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu*" />
+      <Route element={<Checkout userCart={userCart} updateCart={updateCart} updateOrders={updateOrders}/>} path="checkout/*" />
+      <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu/*" />
       </>
     )
   } else if (userType === "employee") {
     userTypeRoutes = (<>
-      <Route element={<Backlog orders={orders}/>} path="backlog*" />
-      <Route element={<DronePage />} path="drones*" />
+      <Route element={<Backlog orders={orders} updateOrders={updateOrders} />} path="backlog/*" />
+      <Route element={<DronePage />} path="drones/*" />
       </>
     )
   }
@@ -51,8 +51,8 @@ function App() {
           <NavBar userType={userType}/>
           <Routes>
             {userTypeRoutes}
-            <Route element={<Login updateUserType={updateUserType} />} path="login*" />
-            <Route element={<Signup updateUserType={updateUserType} />} path="signup*" />
+            <Route element={<Login updateUserType={updateUserType} />} path="login/*" />
+            <Route element={<Signup updateUserType={updateUserType} />} path="signup/*" />
             <Route element={<Home />} path="*" />
           </Routes>
         </BrowserRouter>

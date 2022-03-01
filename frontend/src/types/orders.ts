@@ -22,7 +22,7 @@ export const orderReducer = (state: Order[], action: OrderReducerAction) => {
       }
       break;
     case "remove":
-      if (action.removeInd) {
+      if (action.removeInd != null) {
         new_order.splice(action.removeInd, 1)
       } else {
         console.error("error in cartreducer remove")
