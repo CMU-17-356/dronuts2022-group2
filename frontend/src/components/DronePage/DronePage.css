@@ -1,5 +1,8 @@
 .DronePage {
-  width: 100%;
-  position: fixed; 
-  margin-top: 10px;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.row {
+    margin: 1em;
 }

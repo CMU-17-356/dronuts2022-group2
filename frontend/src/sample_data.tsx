@@ -24,7 +24,7 @@ const drone2 : Drone = {
   ]
 }
 
-const drones = [drone1, drone2]
+const dronesData = [drone1, drone2]
 
 const donut1 : Donut = {
   "name" : "Chocolate Glaze",
@@ -89,4 +89,4 @@ const order_2: Order = {
   "destination": location_1,
 }
 
-export { donuts, order_1, order_2, drones, customer_1}
+export { donuts, order_1, order_2, dronesData, customer_1}
