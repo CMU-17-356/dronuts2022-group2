@@ -9,7 +9,10 @@ import 'dotenv/config';
 import fs from 'fs';
 import { DonutModel } from './frontend/database/schemas/donut_schema';
 
-mongoose.connect('mongodb+srv://dronuts:' + process.env.MONGO_PASSWORD + '@cluster0.qbzmg.mongodb.net/dronutsDB?retryWrites=true&w=majority');
+const uri = 'mongodb+srv://dronut:' + process.env.MONGO_PASSWORD + '@cluster0.gasy8.mongodb.net/Cluster0?retryWrites=true&w=majority';
+mongoose.connect(uri).then(() => {
+  console.log('connected');
+});
 
 const donutPrice = 1.69;
 const imageDir = './frontend/src/assets/';
@@ -42,8 +45,8 @@ function addDonuts() {
         if (numImages == files.length) {
           mongoose.connection.close();
         }
-      });
-      console.log(donut);
+        console.log('success');
+      }).catch((e) => console.log(e));
     });
   });
 }

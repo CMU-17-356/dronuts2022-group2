@@ -13,8 +13,11 @@ import Backlog from './components/Backlog/Backlog';
 import DronePage from './components/DronePage/DronePage';
 import Login from './components/Login/Login';
 import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
+import { OrderReducerAction, orderReducer } from './types/orders';
 import { loginType } from './types/loginType';
 import Home from './components/Home/Home';
+import { Order } from "../database/schemas/order_schema";
+
 /**
  * Main function to run the app
  * @return {React.FC}
@@ -23,18 +26,20 @@ function App() {
   const [userCart, updateCart] = useReducer<Reducer<UserCart, CartReducerAction>>(cartReducer, {
     "donut_orders": [],
   });
+  const [orders, updateOrders] = useReducer<Reducer<Order[], OrderReducerAction>>(orderReducer, []);
+
   const [userType, updateUserType] = useState<loginType>("none")
   let userTypeRoutes = <></>
   if (userType === "customer") {
     userTypeRoutes = (<>
-        <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="/" /> <Route element={<Checkout userCart={userCart} updateCart={updateCart} />} path="/checkout" />
-        <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu" />
+      <Route element={<Checkout userCart={userCart} updateCart={updateCart} updateOrders={updateOrders}/>} path="checkout*" />
+      <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu*" />
       </>
     )
   } else if (userType === "employee") {
     userTypeRoutes = (<>
-      <Route element={<Backlog />} path="backlog" />
-      <Route element={<DronePage />} path="drones" />
+      <Route element={<Backlog orders={orders}/>} path="backlog*" />
+      <Route element={<DronePage />} path="drones*" />
       </>
     )
   }
@@ -45,7 +50,7 @@ function App() {
           <NavBar userType={userType}/>
           <Routes>
             {userTypeRoutes}
-            <Route element={<Login updateUserType={updateUserType} />} path="login" />
+            <Route element={<Login updateUserType={updateUserType} />} path="login*" />
             <Route element={<Home />} path="*" />
           </Routes>
         </BrowserRouter>

@@ -13,7 +13,6 @@ const donutSchema = new Schema<Donut>({
   description: { type: String },
   imageurl: {type: String }
 });
-
 const DonutModel = mongoose.model<Donut>('Donut', donutSchema);
 
 export { donutSchema, DonutModel };
