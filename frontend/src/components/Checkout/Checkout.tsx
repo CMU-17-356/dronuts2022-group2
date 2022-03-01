@@ -4,7 +4,7 @@ import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import PaymentInfo from '../PaymentInfo/PaymentInfo';
 import './Checkout.css';
 import { UserCart, CartReducerAction } from '../../types/userCart';
-import { Form } from 'react-bootstrap'
+import { Container, Form, Row, Col } from 'react-bootstrap'
 import { Address } from '../../../database/schemas/address_schema'
 import { Donut } from '../../../database/schemas/donut_schema'
 import { Order } from '../../../database/schemas/order_schema'
@@ -48,25 +48,27 @@ const Checkout: FC<CheckoutProps> = (props) => {
       "destination": address
     }
     props.updateOrders({ 'name': 'add', 'order': order_out });
-    props.updateCart({name: 'clear'})
+    props.updateCart({ name: 'clear' })
     e?.preventDefault()
   }
 
   return (
     <div className="Checkout">
-      <div className='flex-container'>
-        <Cart userCart={props.userCart} updateCart={props.updateCart}></Cart>
-        <div className='infoForm'>
-          <Form onSubmit={submitForm}>
-            <div className='sidebar'>
-              <DeliveryInfo></DeliveryInfo>
-            </div>
-            <div className='infoForm'>
-              <PaymentInfo></PaymentInfo>
-            </div>
-          </Form>
-        </div>
-      </div>
+        <Container>
+          <Row>
+            <Col xs={6}>
+              <Cart userCart={props.userCart} updateCart={props.updateCart}></Cart>
+            </Col>
+            <Col xs={6}>
+              <div className='infoForm'>
+                <Form onSubmit={submitForm}>
+                    <DeliveryInfo></DeliveryInfo>
+                    <PaymentInfo></PaymentInfo>
+                </Form>
+              </div>
+            </Col>
+          </Row>
+        </Container>
     </div>
   );
 }

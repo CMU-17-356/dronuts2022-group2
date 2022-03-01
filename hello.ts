@@ -16,6 +16,7 @@ const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true, serverApi: ServerApiVersion.v1,
 };
+
 mongoose.connect(uri, options, () => {
   console.log('Connected');
 });

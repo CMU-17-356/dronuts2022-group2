@@ -29,6 +29,7 @@ const NavBar: FC<NavBarProps> = (props) => {
             <Nav className="navMenu">
               {links}
               <Link to="login">Login</Link>
+              <Link to="signup">Sign Up</Link>
               <div className="dot"></div>
             </Nav>
           </Navbar.Collapse>
