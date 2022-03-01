@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import './DeliveryInfo.css';
-import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 
 interface DeliveryInfoProps {}

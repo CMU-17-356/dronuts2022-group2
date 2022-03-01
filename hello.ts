@@ -4,15 +4,23 @@ import mongoose from 'mongoose';
 import { DonutModel } from './frontend/database/schemas/donut_schema';
 import { UserModel } from './frontend/database/schemas/user_schema';
 import { OrderModel } from './frontend/database/schemas/order_schema';
+import { ServerApiVersion } from 'mongodb';
 import 'dotenv/config';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://dronuts:' + process.env.MONGO_PASSWORD + '@cluster0.qbzmg.mongodb.net/dronutsDB?retryWrites=true&w=majority');
+const uri = `mongodb+srv://dronuts:${process.env.MONGO_PASSWORD}@cluster0.qrlht.mongodb.net/DronutsDB?retryWrites=true&w=majority`;
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true, serverApi: ServerApiVersion.v1,
+};
+mongoose.connect(uri, options, () => {
+  console.log('Connected');
+});
 
-app.get('/', (req:express.Request, res:express.Response) => {
+app.get('/', (req: express.Request, res: express.Response) => {
   res.send('Hello World!');
 });
 
@@ -101,11 +109,11 @@ app.post('/new_user', (req: express.Request, res: express.Response) => {
 app.get('/donuts', (req: express.Request, res: express.Response) => {
   DonutModel.find()
       .exec()
-      .then((donuts : any) => {
+      .then((donuts: any) => {
         console.log(donuts);
         res.status(200).json(donuts);
       })
-      .catch((err : any) => {
+      .catch((err: any) => {
         console.log(err);
         res.status(500).json({
           error: err,

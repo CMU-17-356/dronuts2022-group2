@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "cd frontend && npm install",
     "start": "ts-node app.ts",
-    "lint": "eslint . --ext .js,.ts,.tsx,.jsx",
+    "lint": "eslint . --fix --ext .js,.ts,.tsx,.jsx",
     "test": "jest --runInBand --detectOpenHandles --coverage"
   },
   "repository": {
