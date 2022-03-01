@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './Home.css';
-import LogoImage from '../../assets/logo.jpg'
+import LogoImage from '../../logo.jpg'
 interface HomeProps {}
 
 const Home: FC<HomeProps> = () => (

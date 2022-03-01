@@ -7,9 +7,10 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
 import fs from 'fs';
-import { DonutModel } from './frontend/database/schemas/donut_schema';
+import { DonutModel, Donut} from './frontend/database/schemas/donut_schema';
 
-mongoose.connect('mongodb+srv://dronuts:' + process.env.MONGO_PASSWORD + '@cluster0.qbzmg.mongodb.net/dronutsDB?retryWrites=true&w=majority');
+const uri = 'mongodb+srv://dronut:' + process.env.MONGO_PASSWORD + '@cluster0.gasy8.mongodb.net/Cluster0?retryWrites=true&w=majority'
+mongoose.connect(uri, {}, () => {console.log("connected")});
 
 const donutPrice = 1.69;
 const imageDir = './frontend/src/assets/';
@@ -19,9 +20,9 @@ DonutModel.deleteMany({}, addDonuts);
 
 /** Add all donuts to the database  */
 function addDonuts() {
-  fs.readdir(imageDir, (err, files) => {
+  fs.readdir(imageDir, async (err, files) => {
     let numImages = 0;
-    files.forEach((fileName, i) => {
+    files.forEach(async (fileName, i) => {
       // Reformat the file names from donutName.jpg to 'donut name' and
       // 'Donut Name'.
       const removeUnderscore = fileName.replace(/_/g, ' ');
@@ -35,15 +36,16 @@ function addDonuts() {
         imageurl: imageDir + fileName,
         description: 'A nice ' + noJpg + ' donut',
       });
+      console.log(donut)
       // Save all donuts to the database and close the connection when the last
       // finishes.
-      donut.save().then((value) => {
+      await donut.save().then((value) => {
         numImages++;
         if (numImages == files.length) {
           mongoose.connection.close();
         }
-      });
-      console.log(donut);
+        console.log('success');
+      }).catch(e => console.log(e));
     });
   });
 }

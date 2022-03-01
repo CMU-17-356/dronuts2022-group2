@@ -15,6 +15,6 @@ const addressSchema = new Schema<Address>({
   zip: {type: String },
 });
 
-const AddressModel = mongoose.model<Address>('Order', addressSchema);
+const AddressModel = mongoose.model<Address>('Address', addressSchema);
 
 export { addressSchema, AddressModel};
