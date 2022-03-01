@@ -3,12 +3,6 @@
     width: 80%;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .Cart {
     width: 70%;
     justify-content: flex-start; 
