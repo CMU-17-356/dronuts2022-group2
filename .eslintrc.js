@@ -26,6 +26,7 @@ module.exports = {
   },
   'rules': {
     'linebreak-style': 0,
+    'indent': 'off',
     'object-curly-spacing': ['error', 'always'],
   },
 };
