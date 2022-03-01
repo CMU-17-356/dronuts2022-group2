@@ -2,6 +2,7 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    height: 100px;
     z-index: 10;
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
@@ -20,7 +21,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 0em;
+  height: 100%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -42,3 +43,6 @@ body {
   color: #fddb3a;
 }
 
+.navbar {
+    min-height: 2em;
+}
