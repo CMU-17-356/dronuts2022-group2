@@ -39,7 +39,7 @@ function App() {
     )
   } else if (userType === "employee") {
     userTypeRoutes = (<>
-      <Route element={<Backlog orders={orders}/>} path="backlog/*" />
+      <Route element={<Backlog orders={orders} updateOrders={updateOrders} />} path="backlog/*" />
       <Route element={<DronePage />} path="drones/*" />
       </>
     )
