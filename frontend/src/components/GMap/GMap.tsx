@@ -1,9 +1,7 @@
-import React, { FC, useState, Component} from 'react';
+import React, { FC, useState} from 'react';
 import GoogleMapReact from 'google-map-react';
-import shouldPureComponentUpdate from 'react-pure-render/function';
 import './GMap.css';
 import Geocode from "react-geocode";
-import Login from '../Login/Login';
 
 Geocode.enableDebug();
 Geocode.setRegion("us");
@@ -43,7 +41,6 @@ interface GMapProps extends google.maps.MapOptions{
   onClick?: (e: google.maps.MapMouseEvent) => void,
   onIdle?: (map: google.maps.Map) => void,
 }
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const MAPS_KEY = "AIzaSyCaO9NsoZHXDEfqqHU6w2o_51bFiLV4tVc"
 Geocode.setApiKey(MAPS_KEY)
 
@@ -66,12 +63,6 @@ const GMap: FC<GMapProps> = (props: GMapProps) => {
       console.error(error);
     }
   );
-
-  const ref = React.useRef<HTMLDivElement>(null);
-  const style = {
-    width: "400",
-    height: "100%",
-  }
   const options = {
     zoom: 8,
     center: {

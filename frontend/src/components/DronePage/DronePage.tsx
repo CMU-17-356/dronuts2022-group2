@@ -1,7 +1,6 @@
 import { FC, } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Drone } from '../../../database/schemas/drone_schema';
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import DroneCard from '../DroneCard/DroneCard';
 import GMap from '../GMap/GMap';
 import './DronePage.css';

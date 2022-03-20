@@ -1,8 +1,7 @@
-import React, { FC, SetStateAction, Dispatch, useState} from 'react';
+import { FC, SetStateAction, Dispatch, useState} from 'react';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
 import { loginType } from '../../types/loginType';
-import GMap from '../GMap/GMap';
 
 interface LoginProps {
   updateUserType: Dispatch<SetStateAction<loginType>>
