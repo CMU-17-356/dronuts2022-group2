@@ -1,4 +1,4 @@
-import { Dispatch, FC } from 'react';
+import { Dispatch, FC, useState } from 'react';
 import Cart from '../Cart/Cart';
 import DeliveryInfo from '../DeliveryInfo/DeliveryInfo';
 import PaymentInfo from '../PaymentInfo/PaymentInfo';
@@ -18,7 +18,7 @@ interface CheckoutProps {
 }
 
 const Checkout: FC<CheckoutProps> = (props) => {
-
+  const [noti, setNoti] = useState("")
   const submitForm = (e) => {
     const street = e.target.formStreetAddress.value
     const city = e.target.formCity.value
@@ -39,6 +39,7 @@ const Checkout: FC<CheckoutProps> = (props) => {
       quantities.push(x.quantity);
       price += x.donut.price * x.quantity
     }
+    setNoti("Order recieved!")
     const order_out: Order = {
       'order_id': Math.floor(Math.random() * 1000),
       'user': customer_1,
@@ -55,10 +56,11 @@ const Checkout: FC<CheckoutProps> = (props) => {
   return (
     <div className="Checkout">
         <Container>
+            {noti}
           <Row>
             <Col xs={6}>
               <Cart userCart={props.userCart} updateCart={props.updateCart}></Cart>
-            </Col>
+          </Col>
             <Col xs={6}>
               <div className='infoForm'>
                 <Form onSubmit={submitForm}>
@@ -67,7 +69,8 @@ const Checkout: FC<CheckoutProps> = (props) => {
                 </Form>
               </div>
             </Col>
-          </Row>
+        </Row>
+            {noti}
         </Container>
     </div>
   );
