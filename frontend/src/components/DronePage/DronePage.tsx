@@ -24,9 +24,6 @@ const DronePage: FC<DronePageProps> = (props: DronePageProps) => {
     <div className="DronePage">
       <Container>
         <Row>
-          ahh
-        </Row>
-        <Row>
           <GMap droneAddrs={props.drones.map((drone: Drone) => drone.position)}></GMap>
 </Row>
         {convertRows(props.drones)}
