@@ -39,7 +39,7 @@ const Checkout: FC<CheckoutProps> = (props) => {
       quantities.push(x.quantity);
       price += x.donut.price * x.quantity
     }
-    setNoti("Order recieved!")
+    setNoti("Order received!")
     const order_out: Order = {
       'order_id': Math.floor(Math.random() * 1000),
       'user': customer_1,

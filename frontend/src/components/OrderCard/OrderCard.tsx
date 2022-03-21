@@ -14,7 +14,7 @@ interface OrderCardProps {
 }
 
 const addrToString = (addr: Address) => {
-  return addr.street + ', ' + addr.city + ", " + addr.state + " " + addr.zip; 
+  return addr.street + ', ' + addr.city + ", PA " + addr.zip; 
 }
 
 const OrderCard: FC<OrderCardProps> = (props) => {
