@@ -12,10 +12,7 @@ interface OrderCardProps {
 
 const OrderCard: FC<OrderCardProps> = (props) => {
     const assignDrone = () => {
-        console.log(props.orders)
-        console.log(props.order.order_id)
         let index = props.orders.indexOf(props.order);
-        console.log(index);
         props.updateOrders({ 'name': 'remove', 'removeInd': index });
     }
 

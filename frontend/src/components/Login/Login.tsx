@@ -10,8 +10,8 @@ interface LoginProps {
 const Login: FC<LoginProps> = (props) => {
   const [message, updateMessage] = useState('')
   const f = (e) => {
-    let userName = e.target.elements["username"];
-    let password = e.target.elements["password"];
+    let userName = e.target.elements["username"].value;
+    let password = e.target.elements["password"].value;
     if (password === '' || userName === '') {
       updateMessage("Please enter your username and password")
       props.updateUserType("none")

@@ -20,10 +20,10 @@ interface CheckoutProps {
 const Checkout: FC<CheckoutProps> = (props) => {
 
   const submitForm = (e) => {
-    const street = e.target.elements["formStreetAddress"]
-    const city = e.target.elements["formCity"]
-    const state = e.target.elements["formState"]
-    const zip = e.target.elements["formZip"]
+    const street = e.target.elements["formStreetAddress"].value;
+    const city = e.target.elements["formCity"].value;
+    const state = e.target.elements["formState"].value;
+    const zip = e.target.elements["formZip"].value;
     const address: Address = {
       'street': street,
       'city': city,

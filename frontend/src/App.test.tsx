@@ -3,11 +3,11 @@ import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import App from "./App";
 
-test("Can login as user and order", async () => {
+async function submitOrder() {
   render(<App/>);
 
   // Log in as a user.
-  const login = screen.getByText(/login/i);
+  const login = screen.getByRole('link', { name : /login/i });
   expect(login).toBeInTheDocument();
   expect(login).toBeEnabled();
   user.click(login);
@@ -68,7 +68,6 @@ test("Can login as user and order", async () => {
 
   // Make sure ordered donuts are in cart.
   const cartQuantities = screen.getAllByLabelText(/quantity input/i);
-  screen.debug(cartQuantities);
   for (let i in quantityMap) {
     if (quantityMap[i] != 0)
       expect(cartQuantities[i]).toHaveValue(quantityMap[i].toString());
@@ -76,12 +75,42 @@ test("Can login as user and order", async () => {
 
   const submitOrder = screen.getByText(/submit/i);
   user.click(submitOrder);
+}
+
+test("Can login as user and order", async () => {
+  await submitOrder();
 });
 
-// test("Can order as a user", async () => {
-//   const [userCart, updateCart] = useReducer<Reducer<UserCart, CartReducerAction>>(cartReducer, {
-//     "donut_orders": [],
-//   });
-//   const [orders, updateOrders] = useReducer<Reducer<Order[], OrderReducerAction>>(orderReducer, []);
-//   render(<OrderMenu></OrderMenu>)
-// });
+test("Can login as employee and order", async () => {
+  // Submit an order as the user to populate the backlog.
+  await submitOrder();
+
+  // Log in as a employee.
+  const login = screen.getByRole('link', { name : /login/i });
+  expect(login).toBeInTheDocument();
+  expect(login).toBeEnabled();
+  user.click(login);
+
+  const username = await screen.findByPlaceholderText(/username/i);
+  const password = screen.getByPlaceholderText(/password/i);
+
+  user.type(username, "admin");
+  user.type(password, "test");
+
+  const submitButton = screen.getByText(/submit/i);
+  user.click(submitButton);
+
+  await screen.findByText(/success/i);
+
+  // Open backlog and send to drone.
+  const backlog = screen.getByText(/backlog/i);
+  user.click(backlog);
+  const order = await screen.findByText(/order 0/i);
+  user.click(order);
+  const send = screen.getByText(/send to drone/i);
+  user.click(send);
+
+  // Order should be removed.
+  expect(order).not.toBeInTheDocument();
+
+});
