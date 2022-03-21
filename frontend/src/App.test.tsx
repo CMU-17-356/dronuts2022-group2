@@ -42,7 +42,7 @@ async function submitOrder() {
       2 : 0
     };
 
-  for (var i in quantityMap) {
+  for (let i in quantityMap) {
     expect(quantities[i]).toHaveValue("0");
     for (let j = 0; j < quantityMap[i]; j++) {
       expect(quantities[i]).toHaveValue(j.toString());
