@@ -15,10 +15,13 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup'
 import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
 import { OrderReducerAction, orderReducer } from './types/orders';
+import { DroneReducerAction, droneReducer } from './types/drone';
 import { loginType } from './types/loginType';
 import { donuts } from './sample_data';
 import Home from './components/Home/Home';
 import { Order } from "../database/schemas/order_schema";
+import { Drone } from "../database/schemas/drone_schema"
+import { drone1, drone2 } from "./sample_data"
 
 /**
  * Main function to run the app
@@ -29,6 +32,7 @@ function App() {
     "donut_orders": [],
   });
   const [orders, updateOrders] = useReducer<Reducer<Order[], OrderReducerAction>>(orderReducer, []);
+  const [drones, updateDrones] = useReducer<Reducer<Drone[], DroneReducerAction>>(droneReducer, [drone1, drone2]);
 
   const [userType, updateUserType] = useState<loginType>("none")
   let userTypeRoutes = <></>
@@ -40,8 +44,8 @@ function App() {
     )
   } else if (userType === "employee") {
     userTypeRoutes = (<>
-      <Route element={<Backlog orders={orders} updateOrders={updateOrders} />} path="backlog/*" />
-      <Route element={<DronePage />} path="drones/*" />
+      <Route element={<Backlog orders={orders} updateOrders={updateOrders} updateDrones={updateDrones}/>} path="backlog/*" />
+      <Route element={<DronePage drones={drones}/>} path="drones/*" />
       </>
     )
   }

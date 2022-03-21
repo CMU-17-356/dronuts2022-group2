@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction, Dispatch, useState} from 'react';
+import { FC, SetStateAction, Dispatch, useState} from 'react';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
 import { loginType } from '../../types/loginType';
@@ -26,6 +26,9 @@ const Login: FC<LoginProps> = (props) => {
   };
   return (
     <div className="Login">
+      {/* for testing
+       <GMap droneAddrs={["5728 Solway St, Pittsburgh, PA 15217",
+      "4112 Butler St, Pittsburgh, PA 15201"]}></GMap> */}
       <Form onSubmit={f}>
         <h1>Login</h1>
         <Form.Group className="mb-3" controlId="username">

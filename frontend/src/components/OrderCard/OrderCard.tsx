@@ -3,16 +3,27 @@ import { Accordion, Col, Container, Row, Image, Button } from 'react-bootstrap';
 import { Order } from "../../../database/schemas/order_schema";
 import './OrderCard.css';
 import { OrderReducerAction } from '../../types/orders';
+import { DroneReducerAction } from '../../types/drone';
+import { Address } from '../../../database/schemas/address_schema';
 
 interface OrderCardProps {
     order: Order
-    'orders': Order[]
+    orders: Order[]
     updateOrders: Dispatch<OrderReducerAction>,
+    updateDrones: Dispatch<DroneReducerAction>,
+}
+
+const addrToString = (addr: Address) => {
+  return addr.street + ', ' + addr.city + ", PA " + addr.zip; 
 }
 
 const OrderCard: FC<OrderCardProps> = (props) => {
     const assignDrone = () => {
         let index = props.orders.indexOf(props.order);
+        props.updateDrones({
+          'drone_id': 0,
+          'to_address': addrToString(props.order.destination),
+        })
         props.updateOrders({ 'name': 'remove', 'removeInd': index });
     }
 
