@@ -6,7 +6,6 @@ interface HomeProps {}
 const Home: FC<HomeProps> = () => (
   <div className="Home">
     <img src={LogoImage} alt={"WOW SUCH BEAUTY"} width="300px" />
-    <div/>
     404: Eat a donut
   </div>
 );

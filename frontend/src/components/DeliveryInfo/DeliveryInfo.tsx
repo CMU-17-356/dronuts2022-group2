@@ -31,7 +31,7 @@ const DeliveryInfo: FC<DeliveryInfoProps> = () => (
           <Form.Label>State</Form.Label>
           <Form.Select aria-label="Default select example">
               <option>Choose...</option>
-              <option value="1">...</option>
+              <option value="1">PA</option>
           </Form.Select>
       </Form.Group>
 

@@ -1,40 +1,35 @@
-import React, { FC, useState } from 'react';
-import { Container, Row, Button } from 'react-bootstrap';
-import { dronesData } from '../../sample_data';
+import { FC, } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import { Drone } from '../../../database/schemas/drone_schema';
 import DroneCard from '../DroneCard/DroneCard';
+import GMap from '../GMap/GMap';
 import './DronePage.css';
 
-interface DronePageProps {}
 
-const DronePage: FC<DronePageProps> = (props : DronePageProps) => {
-    const convertRows = (drones : Array<Drone>) => {
-        return drones.map((drone : Drone) => <Row key={drone.id}><DroneCard drone={drone}></DroneCard></Row>);
-    }
-    let initialRows = convertRows(dronesData);
-    const [rows, setRows] = useState(initialRows);
-    
-    let drones = dronesData;
-    const addDrone = () => {
-        const newId = Math.max.apply(Math, drones.map(function(o) { return o.id; })) + 1;
-        let drone : Drone = {
-            "id" : newId,
-            "charge" : 100,
-            "destinations" : []
-        }
-        drones.push(drone);
-        console.log(rows);
-        setRows(convertRows(drones));
-    }
-
-    return (
-        <div className="DronePage">
-        <Container>
-        {rows}
-        <Button onClick={addDrone}>New drone</Button>
-        </Container>
-    </div>
-    );
+interface DronePageProps {
+  drones: Drone[]
 }
+
+const DronePage: FC<DronePageProps> = (props: DronePageProps) => {
+  const convertRows = (drones: Drone[]) => {
+    return drones.map((drone: Drone) => <Row key={drone.id}><DroneCard drone={drone}>
+    </DroneCard>
+    </Row>);
+  }
+    console.log("DRONES")
+    console.log(props.drones)
+
+  return (
+    <div className="DronePage">
+      <Container>
+        <Row>
+          <GMap droneAddrs={props.drones.map((drone: Drone) => drone.position)}></GMap>
+</Row>
+        {convertRows(props.drones)}
+      </Container>
+    </div>
+  );
+}
+
 
 export default DronePage;

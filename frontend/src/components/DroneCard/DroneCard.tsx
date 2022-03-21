@@ -8,7 +8,7 @@ interface DroneCardProps {
 }
 
 const DroneCard: FC<DroneCardProps> = (props : DroneCardProps) => {
-  const route = props.drone.destinations.map((dest : string, i) => <li key={i}>{dest}</li>);
+  const route = <p>{props.drone.position}</p>;
 
   return (
     <div className="DroneCard">
@@ -16,10 +16,7 @@ const DroneCard: FC<DroneCardProps> = (props : DroneCardProps) => {
         <Card.Header> Drone #{props.drone.id} </Card.Header>
         <Card.Body>
           Charge: {props.drone.charge}% <br/>
-          Route:
-            <ol>
-              {route}
-            </ol>
+          Position: {route}
         </Card.Body>
       </Card>
     </div>

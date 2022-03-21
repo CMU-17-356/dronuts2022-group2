@@ -4,10 +4,12 @@ import OrderCard from '../OrderCard/OrderCard';
 import { Order } from "../../../database/schemas/order_schema";
 import './Backlog.css';
 import { OrderReducerAction } from '../../types/orders';
+import { DroneReducerAction } from '../../types/drone';
 
 interface BacklogProps {
-  'orders': Order[],
+  orders: Order[],
   updateOrders: Dispatch<OrderReducerAction>,
+  updateDrones: Dispatch<DroneReducerAction>,
 }
 
 const Backlog: FC<BacklogProps> = (props) => (
@@ -23,7 +25,7 @@ const Backlog: FC<BacklogProps> = (props) => (
                 </Row>
             </Container>
             </Accordion.Header>
-            <OrderCard order={order} orders={props.orders} updateOrders={props.updateOrders} />
+            <OrderCard order={order} orders={props.orders} updateOrders={props.updateOrders} updateDrones={props.updateDrones}/>
         </Accordion.Item>
         ))
         }
