@@ -26,10 +26,10 @@ const DeliveryInfo: FC<DeliveryInfoProps> = () => (
           <Form.Control type="city" placeholder="Enter city" />
       </Form.Group>
 
-      
+
       <Form.Group className="mb-3" controlId="formState">
           <Form.Label>State</Form.Label>
-          <Form.Select aria-label="Default select example">
+          <Form.Select aria-label="Choose state">
               <option>Choose...</option>
               <option value="1">...</option>
           </Form.Select>

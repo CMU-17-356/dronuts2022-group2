@@ -16,6 +16,7 @@ import Signup from './components/Signup/Signup'
 import { UserCart, cartReducer, CartReducerAction } from './types/userCart';
 import { OrderReducerAction, orderReducer } from './types/orders';
 import { loginType } from './types/loginType';
+import { donuts } from './sample_data';
 import Home from './components/Home/Home';
 import { Order } from "../database/schemas/order_schema";
 
@@ -34,7 +35,7 @@ function App() {
   if (userType === "customer") {
     userTypeRoutes = (<>
       <Route element={<Checkout userCart={userCart} updateCart={updateCart} updateOrders={updateOrders}/>} path="checkout/*" />
-      <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} />} path="menu/*" />
+      <Route element={<OrderMenu userCart={userCart} updateCart={updateCart} donuts={donuts}/>} path="menu/*" />
       </>
     )
   } else if (userType === "employee") {
