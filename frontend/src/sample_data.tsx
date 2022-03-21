@@ -10,18 +10,13 @@ import VFImage from './assets/vanilla_frosted.jpg'
 const drone1 : Drone = {
   "id" : 1,
   "charge" : 98,
-  "destinations" : [
-    "4500 Centre Ave",
-    "1000 Morewood Ave"
-  ]
+  "position" : "4112 Butler St, Pittsburgh, PA 15201",
 }
 
 const drone2 : Drone = {
   "id" : 2,
   "charge" : 42,
-  "destinations" : [
-    "5000 Forbes Ave",
-  ]
+  "position" : "4112 Butler St, Pittsburgh, PA 15201",
 }
 
 const dronesData = [drone1, drone2]
@@ -58,12 +53,6 @@ const customer_1: User = {
     "employee": false,
 }
 
-// const employee_1 : User = {
-//   "username" : "rocksandcheeze",
-//   "password" : "jksdyf576uryxdmmx87q2",
-//   "employee": true,
-// }
-
 const location_1: Address = {
     'street': "1337 Leet Palace",
     'city': "Hackerplace",
@@ -89,4 +78,4 @@ const order_2: Order = {
   "destination": location_1,
 }
 
-export { donuts, order_1, order_2, dronesData, customer_1}
+export { drone1, drone2, donuts, order_1, order_2, dronesData, customer_1}

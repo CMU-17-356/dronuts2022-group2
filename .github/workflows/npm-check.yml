@@ -20,6 +20,3 @@ jobs:
 
       - name: Install Packages
         run: npm ci
-
-      - name: Run NPM Check
-        run: npx npm-check -s
