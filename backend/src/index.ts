@@ -124,5 +124,5 @@ app.get('/donuts', (req: express.Request, res: express.Response) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });

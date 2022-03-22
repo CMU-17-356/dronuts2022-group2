@@ -32,7 +32,8 @@
     "prestart": "npm install -g serve",
     "build": "react-dotenv && react-scripts build",
     "test": "react-dotenv && react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --fix --ext .js,.ts,.tsx,.jsx"
   },
   "eslintConfig": {
     "extends": [
