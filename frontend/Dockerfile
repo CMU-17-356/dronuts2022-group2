@@ -4,6 +4,7 @@ FROM node:alpine3.11
 RUN mkdir -p /app
 
 RUN npm install -g typescript
+RUN npm install -g @types/googlemaps
 
 # The /app directory should act as the main application directory
 WORKDIR /app
