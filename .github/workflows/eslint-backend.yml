@@ -9,6 +9,8 @@ on:
 jobs:
   run-lint-backend:
     runs-on: ubuntu-latest
+    defaults:
+      run: working-directory: ./backend
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -18,8 +20,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Go to backend dir
-        run: cd backend
+#       - name: Go to backend dir
+#         run: cd backend
 
       - name: Install Packages
         run: npm ci
