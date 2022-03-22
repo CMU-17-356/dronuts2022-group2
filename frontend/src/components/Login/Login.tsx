@@ -1,4 +1,5 @@
-import { FC, SetStateAction, Dispatch, useState} from 'react';
+import React from 'react';
+import { FC, SetStateAction, Dispatch, useState } from 'react';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
 import { loginType } from '../../types/loginType';
@@ -8,19 +9,19 @@ interface LoginProps {
 }
 
 const Login: FC<LoginProps> = (props) => {
-  const [message, updateMessage] = useState('')
+  const [message, updateMessage] = useState('');
   const f = (e) => {
-    let userName = e.target.username.value;
-    let password = e.target.password.value;
+    const userName = e.target.elements['username'].value;
+    const password = e.target.elements['password'].value;
     if (password === '' || userName === '') {
-      updateMessage("Please enter your username and password")
-      props.updateUserType("none")
+      updateMessage('Please enter your username and password');
+      props.updateUserType('none');
     } else if (userName === 'admin') {
-      updateMessage("Success: Logged in as employee")
-      props.updateUserType("employee")
+      updateMessage('Success: Logged in as employee');
+      props.updateUserType('employee');
     } else {
-      updateMessage("Success: Logged in as a customer")
-      props.updateUserType("customer")
+      updateMessage('Success: Logged in as a customer');
+      props.updateUserType('customer');
     }
     e.preventDefault(); // avoid refresh and losing all data
   };
@@ -46,6 +47,6 @@ const Login: FC<LoginProps> = (props) => {
       <p>{message}</p>
     </div>
   );
-}
+};
 
 export default Login;

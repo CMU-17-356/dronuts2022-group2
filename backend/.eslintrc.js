@@ -4,7 +4,6 @@ module.exports = {
     'es2021': true,
   },
   'extends': [
-    'plugin:react/recommended',
     'google',
   ],
   'parser': '@typescript-eslint/parser',
@@ -16,14 +15,8 @@ module.exports = {
     'sourceType': 'module',
   },
   'plugins': [
-    'react',
     '@typescript-eslint',
   ],
-  'settings': {
-    'react': {
-      'version': '17.0.2',
-    },
-  },
   'rules': {
     'linebreak-style': 0,
     'object-curly-spacing': ['error', 'always'],

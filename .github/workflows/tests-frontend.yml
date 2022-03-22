@@ -1,5 +1,5 @@
-# Run npm check
-name: npm-check
+# Run all tests
+name: Run Tests on frontend
 
 on:
   push:
@@ -7,11 +7,11 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  run-check:
+  run-tests-frontend:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./frontend
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -23,3 +23,6 @@ jobs:
 
       - name: Install Packages
         run: npm ci
+
+      - name: Run all tests
+        run: npm run test

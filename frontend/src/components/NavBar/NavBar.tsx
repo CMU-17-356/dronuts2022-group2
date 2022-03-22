@@ -1,24 +1,24 @@
 import React, { FC } from 'react';
 import './NavBar.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 import { loginType } from '../../types/loginType';
 interface NavBarProps {
   userType: loginType
 }
 
 const NavBar: FC<NavBarProps> = (props) => {
-  let links = <></>
-  if (props.userType === "customer") {
+  let links = <></>;
+  if (props.userType === 'customer') {
     links = <>
       <Link to="menu">Donut Menu</Link>
       <Link to="checkout">Checkout</Link>
-    </>
-  } else if (props.userType === "employee") {
+    </>;
+  } else if (props.userType === 'employee') {
     links = <>
       <Link to="backlog">Backlog</Link>
       <Link to="drones">Drones</Link>
-    </>
+    </>;
   }
   return (
     <div className="NavBar">
@@ -37,6 +37,6 @@ const NavBar: FC<NavBarProps> = (props) => {
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavBar;

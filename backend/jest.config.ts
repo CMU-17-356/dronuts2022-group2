@@ -10,6 +10,5 @@ const config: Config.InitialOptions = {
       'jest-transform-stub',
   },
   testEnvironment: 'node',
-  projects: ['./database', './src'],
 };
 export default config;

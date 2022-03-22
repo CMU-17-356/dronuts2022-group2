@@ -1,5 +1,5 @@
-# Run npm check
-name: npm-check
+# Run eslint
+name: Run Eslint in backend
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  run-check:
+  run-lint-backend:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,3 +23,6 @@ jobs:
 
       - name: Install Packages
         run: npm ci
+
+      - name: Lint Code Base
+        run: npm run lint
