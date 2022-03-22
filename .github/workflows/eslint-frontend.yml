@@ -1,5 +1,5 @@
 # Run eslint
-name: Run Eslint
+name: Run Eslint in frontend
 
 on:
   push:
@@ -7,17 +7,20 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  run-lint:
+  run-lint-frontend:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Install Node
         uses: actions/setup-node@v1
         with:
           node-version: 16
-        
+
+      - name: Go to backend dir
+        run: cd frontend
+
       - name: Install Packages
         run: npm ci
 
