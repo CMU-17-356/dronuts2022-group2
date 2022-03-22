@@ -9,6 +9,9 @@ on:
 jobs:
   run-tests-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,9 +20,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
-
-      - name: Go to frontend
-        run: cd frontend
 
       - name: Install Packages
         run: npm ci
