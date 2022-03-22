@@ -9,10 +9,6 @@ const config: Config.InitialOptions = {
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
   },
-  moduleNameMapper: {
-      "^.+\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
-  },
   testEnvironment: 'node',
-  projects: ['./frontend/database', './frontend/src'],
 };
 export default config;
