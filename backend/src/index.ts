@@ -1,12 +1,13 @@
 import express = require('express');
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import { DonutModel } from './frontend/database/schemas/donut_schema';
-import { UserModel } from './frontend/database/schemas/user_schema';
-import { OrderModel } from './frontend/database/schemas/order_schema';
+import { DonutModel } from './database/schemas/donut_schema';
+import { UserModel } from './database/schemas/user_schema';
+import { OrderModel } from './database/schemas/order_schema';
 import { ServerApiVersion } from 'mongodb';
 import 'dotenv/config';
 
+const port = 8080;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -122,5 +123,6 @@ app.get('/donuts', (req: express.Request, res: express.Response) => {
       });
 });
 
-export default app;
-module.exports = app;
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});

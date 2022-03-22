@@ -7,7 +7,7 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
 import fs from 'fs';
-import { DonutModel } from './frontend/database/schemas/donut_schema';
+import { DonutModel } from './database/schemas/donut_schema';
 
 const uri = 'mongodb+srv://dronut:' + process.env.MONGO_PASSWORD + '@cluster0.gasy8.mongodb.net/Cluster0?retryWrites=true&w=majority';
 mongoose.connect(uri).then(() => {
