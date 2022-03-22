@@ -1,4 +1,5 @@
-import { FC, } from 'react';
+import React from 'react';
+import { FC } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Drone } from '../../../database/schemas/drone_schema';
 import DroneCard from '../DroneCard/DroneCard';
@@ -15,21 +16,21 @@ const DronePage: FC<DronePageProps> = (props: DronePageProps) => {
     return drones.map((drone: Drone) => <Row key={drone.id}><DroneCard drone={drone}>
     </DroneCard>
     </Row>);
-  }
-    console.log("DRONES")
-    console.log(props.drones)
+  };
+  console.log('DRONES');
+  console.log(props.drones);
 
   return (
     <div className="DronePage">
       <Container>
         <Row>
           <GMap droneAddrs={props.drones.map((drone: Drone) => drone.position)}></GMap>
-</Row>
+        </Row>
         {convertRows(props.drones)}
       </Container>
     </div>
   );
-}
+};
 
 
 export default DronePage;

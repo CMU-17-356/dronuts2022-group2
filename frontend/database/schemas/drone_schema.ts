@@ -2,9 +2,9 @@ import mongoose, { Schema } from 'mongoose';
 
 
 export interface Drone {
-  "id" : number, // Unique drone ID
-  "charge" : number, // Remaining charge % [0,100]
-  "position": string // Drone's current position
+  'id' : number, // Unique drone ID
+  'charge' : number, // Remaining charge % [0,100]
+  'position': string // Drone's current position
 }
 
 const droneSchema = new Schema<Drone>({

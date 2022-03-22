@@ -1,3 +1,4 @@
+import React from 'react';
 import { FC, Dispatch } from 'react';
 import DonutCard from '../DonutCard/DonutCard';
 import './Cart.css';
@@ -16,6 +17,6 @@ const Cart: FC<CartProps> = (props: CartProps) => {
       {cartCards}
     </div>
   );
-}
+};
 
 export default Cart;

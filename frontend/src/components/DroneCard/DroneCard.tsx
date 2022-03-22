@@ -21,6 +21,6 @@ const DroneCard: FC<DroneCardProps> = (props : DroneCardProps) => {
       </Card>
     </div>
   );
-}
+};
 
 export default DroneCard;

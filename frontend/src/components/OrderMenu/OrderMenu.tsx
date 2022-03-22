@@ -1,9 +1,10 @@
+import React from 'react';
 import { Dispatch, FC } from 'react';
 import DonutCard from '../DonutCard/DonutCard';
 import './OrderMenu.css';
 import { Container, Row, Col } from 'react-bootstrap';
 // import { donuts } from '../../sample_data'
-import { Donut } from '../../../database/schemas/donut_schema'
+import { Donut } from '../../../database/schemas/donut_schema';
 import { UserCart, CartReducerAction } from '../../types/userCart';
 
 interface OrderMenuProps {
@@ -13,14 +14,14 @@ interface OrderMenuProps {
 }
 
 const get_init_donut_quantity = (cart: UserCart, donut: Donut) => {
-  let init_q = 0
-  for (let order of cart.donut_orders) {
+  let init_q = 0;
+  for (const order of cart.donut_orders) {
     if (order.donut.name === donut.name) {
       init_q = order.quantity;
     }
   }
-  return init_q
-}
+  return init_q;
+};
 
 const OrderMenu: FC<OrderMenuProps> = (props) => {
   const menuCards = props.donuts.map((donut: Donut) =>
@@ -35,6 +36,6 @@ const OrderMenu: FC<OrderMenuProps> = (props) => {
       </Container>
     </div>
   );
-}
+};
 
 export default OrderMenu;

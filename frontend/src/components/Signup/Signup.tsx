@@ -8,19 +8,19 @@ interface LoginProps {
 }
 
 const Signup: FC<LoginProps> = (props) => {
-  const [message, updateMessage] = useState("")
+  const [message, updateMessage] = useState('');
   const f = (e) => {
-    let p1 = e.target.password.value;
-    let p2 = e.target.password2.value;
-    if (p1 === "") {
-      props.updateUserType("none")
-      updateMessage("Please enter a nonempty password")
+    const p1 = e.target.password.value;
+    const p2 = e.target.password2.value;
+    if (p1 === '') {
+      props.updateUserType('none');
+      updateMessage('Please enter a nonempty password');
     } else if (p1 === p2) {
-      props.updateUserType("employee")
-      updateMessage("Successfully signed up!")
+      props.updateUserType('employee');
+      updateMessage('Successfully signed up!');
     } else {
-      props.updateUserType("none")
-      updateMessage("Passwords don't match, try again.")
+      props.updateUserType('none');
+      updateMessage('Passwords don\'t match, try again.');
     }
     e.preventDefault(); // avoid refresh and losing all data
   };
@@ -28,7 +28,7 @@ const Signup: FC<LoginProps> = (props) => {
     <div className="Login">
       <Form onSubmit={ f }>
         <h1>Sign Up</h1>
-        
+
         <Form.Group className="mb-3" controlId="username">
           <Form.Label>Username</Form.Label>
           <Form.Control type="username" placeholder="Enter username" />
@@ -48,6 +48,6 @@ const Signup: FC<LoginProps> = (props) => {
       <p>{message}</p>
     </div>
   );
-}
+};
 
 export default Signup;

@@ -1,15 +1,17 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import user from "@testing-library/user-event";
-import App from "./App";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import user from '@testing-library/user-event';
+import App from './App';
 
-test("just render app", () => { render(<App/>); return; });
+test('just render app', () => {
+  render(<App/>); return;
+});
 
 async function submitOrder() {
   render(<App/>);
 
   // Log in as a user.
-  const login = screen.getByRole('link', { name : /login/i });
+  const login = screen.getByRole('link', { name: /login/i });
   expect(login).toBeInTheDocument();
   expect(login).toBeEnabled();
   user.click(login);
@@ -17,8 +19,8 @@ async function submitOrder() {
   const username = await screen.findByPlaceholderText(/username/i);
   const password = screen.getByPlaceholderText(/password/i);
 
-  user.type(username, "test");
-  user.type(password, "test");
+  user.type(username, 'test');
+  user.type(password, 'test');
 
   const submitButton = screen.getByText(/submit/i);
   user.click(submitButton);
@@ -37,13 +39,13 @@ async function submitOrder() {
 
   // Map donut i to how many of i are being purchased
   const quantityMap =
-    { 0 : 2,
-      1 : 1,
-      2 : 0
+    { 0: 2,
+      1: 1,
+      2: 0,
     };
 
-  for (let i in quantityMap) {
-    expect(quantities[i]).toHaveValue("0");
+  for (const i in quantityMap) {
+    expect(quantities[i]).toHaveValue('0');
     for (let j = 0; j < quantityMap[i]; j++) {
       expect(quantities[i]).toHaveValue(j.toString());
       user.click(buttons[i]);
@@ -62,33 +64,34 @@ async function submitOrder() {
   const city = screen.getByPlaceholderText(/city/i);
   const zip = screen.getByPlaceholderText(/zip code/i);
 
-  user.type(fullName, "name");
-  user.type(phone, "412");
-  user.type(street, "name");
-  user.type(city, "pgh");
-  user.type(zip, "15213");
+  user.type(fullName, 'name');
+  user.type(phone, '412');
+  user.type(street, 'name');
+  user.type(city, 'pgh');
+  user.type(zip, '15213');
 
   // Make sure ordered donuts are in cart.
   const cartQuantities = screen.getAllByLabelText(/quantity input/i);
-  for (let i in quantityMap) {
-    if (quantityMap[i] != 0)
+  for (const i in quantityMap) {
+    if (quantityMap[i] != 0) {
       expect(cartQuantities[i]).toHaveValue(quantityMap[i].toString());
+    }
   }
 
   const submitOrder = screen.getByText(/submit/i);
   user.click(submitOrder);
 }
 
-test("Can login as user and order", async () => {
+test('Can login as user and order', async () => {
   await submitOrder();
 });
 
-test("Can login as employee and order", async () => {
+test('Can login as employee and order', async () => {
   // Submit an order as the user to populate the backlog.
   await submitOrder();
 
   // Log in as a employee.
-  const login = screen.getByRole('link', { name : /login/i });
+  const login = screen.getByRole('link', { name: /login/i });
   expect(login).toBeInTheDocument();
   expect(login).toBeEnabled();
   user.click(login);
@@ -96,8 +99,8 @@ test("Can login as employee and order", async () => {
   const username = await screen.findByPlaceholderText(/username/i);
   const password = screen.getByPlaceholderText(/password/i);
 
-  user.type(username, "admin");
-  user.type(password, "test");
+  user.type(username, 'admin');
+  user.type(password, 'test');
 
   const submitButton = screen.getByText(/submit/i);
   user.click(submitButton);
@@ -114,5 +117,4 @@ test("Can login as employee and order", async () => {
 
   // Order should be removed.
   expect(order).not.toBeInTheDocument();
-
 });

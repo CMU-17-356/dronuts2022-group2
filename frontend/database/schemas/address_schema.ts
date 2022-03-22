@@ -9,12 +9,12 @@ export interface Address {
 }
 
 const addressSchema = new Schema<Address>({
-  street: {type: String, required: true },
-  city: {type: String },
-  state: {type: String },
-  zip: {type: String },
+  street: { type: String, required: true },
+  city: { type: String },
+  state: { type: String },
+  zip: { type: String },
 });
 
 const AddressModel = mongoose.model<Address>('Address', addressSchema);
 
-export { addressSchema, AddressModel};
+export { addressSchema, AddressModel };
