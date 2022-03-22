@@ -10,7 +10,8 @@ jobs:
   run-lint-backend:
     runs-on: ubuntu-latest
     defaults:
-      run: working-directory: ./backend
+      run:
+        working-directory: ./backend
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
