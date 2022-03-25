@@ -1,6 +1,7 @@
 # dronut
 
 DEPLOYED AT https://dronuts-frontend-344820.de.r.appspot.com/drones
+(don't refresh or our database will die)
 
 ## Run frontend app
 
